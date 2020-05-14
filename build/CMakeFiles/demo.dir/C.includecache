@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/list.h
+stdlib.h
+-
+
+../include/read_model.h
+list.h
+../include/list.h
+stdio.h
+-
+
+/home/jackliu/Proj/darknet_rep/test/main.c
+list.h
+/home/jackliu/Proj/darknet_rep/test/list.h
+read_model.h
+/home/jackliu/Proj/darknet_rep/test/read_model.h
+stdio.h
+-
+

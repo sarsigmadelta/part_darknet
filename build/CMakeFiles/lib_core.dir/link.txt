@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,liblib_core.so -o liblib_core.so CMakeFiles/lib_core.dir/src/list.c.o CMakeFiles/lib_core.dir/src/read_model.c.o 

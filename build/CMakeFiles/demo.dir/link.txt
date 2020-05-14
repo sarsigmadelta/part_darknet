@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/demo.dir/test/main.c.o  -o demo -Wl,-rpath,/home/jackliu/Proj/darknet_rep/build liblib_core.so 
