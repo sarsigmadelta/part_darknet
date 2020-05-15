@@ -15,6 +15,8 @@ list.h
 ../include/list.h
 stdio.h
 -
+string.h
+-
 
 /home/jackliu/Proj/darknet_rep/test/main.c
 list.h

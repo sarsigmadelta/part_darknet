@@ -21,6 +21,12 @@ typedef struct section{
     list *option;
 }section;
 
+typedef struct kvp{
+    char *key;
+    char *val;
+    int used;
+}kvp;
+
 
 list* make_list();
 
