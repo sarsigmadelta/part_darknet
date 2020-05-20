@@ -13,7 +13,7 @@ typedef struct image{
 typedef struct matrix{
     int rows;
     int cols;
-    float *data;
+    float **data;
 }matrix;
 
 typedef struct data{
@@ -25,6 +25,10 @@ typedef struct load_args{
     int height;
     int width;
     int channels;
+    char** paths;
+    int threads;
+
+    
     data *d;
 }load_args;
 

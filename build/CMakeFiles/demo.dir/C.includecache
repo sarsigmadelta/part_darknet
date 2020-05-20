@@ -27,6 +27,8 @@ read_model.h
 /home/mrzs/Proj/part_darknet/test/read_model.h
 stdio.h
 -
+pthread.h
+-
 load_data.h
 /home/mrzs/Proj/part_darknet/test/load_data.h
 

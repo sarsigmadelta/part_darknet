@@ -3,7 +3,7 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_FLAGS = -fPIC  
+C_FLAGS = -pthread -fPIC  
 
 C_DEFINES = -Dlib_core_EXPORTS
 

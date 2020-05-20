@@ -1,6 +1,7 @@
 #include "list.h"
 #include "read_model.h"
 #include <stdio.h>
+#include <pthread.h>
 #include "load_data.h"
 
 // /home/jackliu/Proj/darknet_rep/assets/yolov2.cfg
@@ -15,6 +16,10 @@ void show_options(list *l){
         f = f->next;
     }
     printf("------->-------------->\n");
+}
+
+void *thread_func(void* ptr){
+    return 0;
 }
 
 int main(){
@@ -35,5 +40,8 @@ int main(){
     char *image_path = "/home/mrzs/Desktop/d/jpgs/000001.jpg";
     load_one_image(image_path);
 
+    pthread_t thread;
+    pthread_create(&thread, 0, thread_func, 0);
+    pthread_join(thread, 0);
     return 0;
 }

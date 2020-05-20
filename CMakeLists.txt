@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.2)
 
 PROJECT(build_darknet)
 
+set( CMAKE_C_FLAGS "-pthread" )
+
 INCLUDE_DIRECTORIES(
     include
 )
@@ -13,6 +15,8 @@ AUX_SOURCE_DIRECTORY(
 ADD_LIBRARY(lib_core SHARED src/list.c src/read_model.c src/load_data.cpp)
 
 find_package(OpenCV REQUIRED)
+find_package (Threads REQUIRED)
+
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 
