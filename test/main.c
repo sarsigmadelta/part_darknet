@@ -1,6 +1,7 @@
 #include "list.h"
 #include "read_model.h"
 #include <stdio.h>
+#include "load_data.h"
 
 // /home/jackliu/Proj/darknet_rep/assets/yolov2.cfg
 
@@ -18,7 +19,7 @@ void show_options(list *l){
 
 int main(){
 
-    char *path = "/home/jackliu/Proj/darknet_rep/assets/yolov2.cfg";
+    char *path = "/home/mrzs/Proj/part_darknet/assets/yolov2.cfg";
     list *l = read_cfg(path);
     int n = l->size;
     int i;
@@ -30,6 +31,9 @@ int main(){
         show_options(s->option);
         f = f->next;
     }
+
+    char *image_path = "/home/mrzs/Desktop/d/jpgs/000001.jpg";
+    load_one_image(image_path);
 
     return 0;
 }

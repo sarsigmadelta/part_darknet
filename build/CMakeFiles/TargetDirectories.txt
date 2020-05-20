@@ -1,4 +1,4 @@
-/home/jackliu/Proj/darknet_rep/build/CMakeFiles/rebuild_cache.dir
-/home/jackliu/Proj/darknet_rep/build/CMakeFiles/edit_cache.dir
-/home/jackliu/Proj/darknet_rep/build/CMakeFiles/demo.dir
-/home/jackliu/Proj/darknet_rep/build/CMakeFiles/lib_core.dir
+/home/mrzs/Proj/part_darknet/build/CMakeFiles/rebuild_cache.dir
+/home/mrzs/Proj/part_darknet/build/CMakeFiles/edit_cache.dir
+/home/mrzs/Proj/part_darknet/build/CMakeFiles/demo.dir
+/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core.dir

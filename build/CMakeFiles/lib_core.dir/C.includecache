@@ -18,13 +18,13 @@ stdio.h
 string.h
 -
 
-/home/jackliu/Proj/darknet_rep/src/list.c
+/home/mrzs/Proj/part_darknet/src/list.c
 list.h
-/home/jackliu/Proj/darknet_rep/src/list.h
+/home/mrzs/Proj/part_darknet/src/list.h
 stdio.h
 -
 
-/home/jackliu/Proj/darknet_rep/src/read_model.c
+/home/mrzs/Proj/part_darknet/src/read_model.c
 read_model.h
-/home/jackliu/Proj/darknet_rep/src/read_model.h
+/home/mrzs/Proj/part_darknet/src/read_model.h
 
