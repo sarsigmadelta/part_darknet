@@ -12,7 +12,7 @@ AUX_SOURCE_DIRECTORY(
     . DIR_SRCS
 )
 
-ADD_LIBRARY(lib_core SHARED src/list.c src/read_model.c src/load_data.cpp)
+ADD_LIBRARY(lib_core SHARED src/list.c src/read_model.c src/load_data.cpp src/load_data_utils.c)
 
 find_package(OpenCV REQUIRED)
 find_package (Threads REQUIRED)

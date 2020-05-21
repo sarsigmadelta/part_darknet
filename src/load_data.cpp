@@ -50,3 +50,15 @@ image load_one_image(char *path){
     
     return im;
 }
+
+void* dummy_func(void* a){
+    return 0;
+}
+
+pthread_t load_data(load_args args){
+    load_args *ptr = (load_args*)calloc(1, sizeof(load_args));
+    *ptr = args;
+    pthread_t thread;
+    pthread_create(&thread, 0, dummy_func, 0);
+    return thread;
+}

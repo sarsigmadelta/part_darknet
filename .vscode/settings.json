@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "read_model.h": "c"
+        "read_model.h": "c",
+        "load_data_utils.h": "c",
+        "string.h": "c"
     }
 }

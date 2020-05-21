@@ -190,6 +190,33 @@ src/load_data.cpp.s:
 	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data.cpp.s
 .PHONY : src/load_data.cpp.s
 
+src/load_data_utils.o: src/load_data_utils.c.o
+
+.PHONY : src/load_data_utils.o
+
+# target to build an object file
+src/load_data_utils.c.o:
+	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data_utils.c.o
+.PHONY : src/load_data_utils.c.o
+
+src/load_data_utils.i: src/load_data_utils.c.i
+
+.PHONY : src/load_data_utils.i
+
+# target to preprocess a source file
+src/load_data_utils.c.i:
+	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data_utils.c.i
+.PHONY : src/load_data_utils.c.i
+
+src/load_data_utils.s: src/load_data_utils.c.s
+
+.PHONY : src/load_data_utils.s
+
+# target to generate assembly for a file
+src/load_data_utils.c.s:
+	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data_utils.c.s
+.PHONY : src/load_data_utils.c.s
+
 src/read_model.o: src/read_model.c.o
 
 .PHONY : src/read_model.o
@@ -260,6 +287,9 @@ help:
 	@echo "... src/load_data.o"
 	@echo "... src/load_data.i"
 	@echo "... src/load_data.s"
+	@echo "... src/load_data_utils.o"
+	@echo "... src/load_data_utils.i"
+	@echo "... src/load_data_utils.s"
 	@echo "... src/read_model.o"
 	@echo "... src/read_model.i"
 	@echo "... src/read_model.s"
