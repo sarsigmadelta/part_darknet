@@ -175,10 +175,47 @@ image resize_image(image im, int height_new, int width_new){
     for(c=0; c<im.channels; ++c){
         for(h=0; h<rsz.height; ++h){
             for(w=0; w<rsz.width; ++w){
-                float h_im = (h / rsz.height) * im.height;
-                float w_im = (w / rsz.width ) * im.width;
-                //float beta_h = 
+                float h_im = (float(h) / rsz.height) * im.height;
+                float w_im = (float(w) / rsz.width ) * im.width;
+                int h_im_int = ceil(h_im) - 1;
+                int w_im_int = ceil(w_im) - 1;
+                float beta_h = h_im - h_im_int;
+                float beta_w = w_im - w_im_int;
+                
+                float val = (1 - beta_h) * (1 - beta_w) * get_pixel_from_image(im, h_im_int, w_im_int, c) + 
+                            (beta_h ) * (1 - beta_w) * get_pixel_from_image(im, h_im_int+1, w_im_int, c) +
+                            (beta_w) * (1 - beta_h) * get_pixel_from_image(im, h_im_int, w_im_int+1, c) +
+                            (beta_h) * (beta_w) * get_pixel_from_image(im, h_im_int+1, w_im_int+1, c) ;
+                int index = c * rsz.height * rsz.width + h * rsz.width + w;
+                rsz.data[index] = val ;
             }
         }
     }
+    return rsz;
+}
+
+image load_one_image_debug(char *path, int height_new, int width_new){
+    cv::Mat mat = cv::imread(path);
+    int height = mat.rows;
+    int width = mat.cols;
+    int channels = mat.channels();
+    image im = make_image(height, width, channels);
+
+    int h,w,c;
+    for(c=0; c<channels; ++c){
+        for(h=0; h<height; ++h){
+            uchar *data_ptr = mat.ptr<uchar>(h);
+            for(w=0; w<width; ++w){
+                int index = c * height * width + h * width + w;
+                im.data[index] = data_ptr[3*w + c];
+            }
+        }
+    }
+    image rsz = resize_image(im, height_new, width_new);
+
+    cv::Mat mat_c = image_to_mat(rsz);
+
+    cv::imshow("test", mat_c);
+    cv::waitKey(0);
+    return rsz;
 }

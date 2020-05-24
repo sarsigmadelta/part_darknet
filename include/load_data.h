@@ -3,6 +3,7 @@
 
 #include <pthread.h>
 #include "load_data_utils.h"
+#include <math.h>
 
 typedef struct image{
     int height;
@@ -42,6 +43,7 @@ extern "C"{
 #endif
 
     image load_one_image(char *path);
+    image load_one_image_debug(char *path, int height_new, int width_new);
     image make_image(int height, int width, int channels);
 
     pthread_t load_data_in_thread(load_args args);
