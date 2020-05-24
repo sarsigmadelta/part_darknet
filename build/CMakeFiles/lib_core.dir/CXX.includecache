@@ -6,8 +6,22 @@
 
 #IncludeRegexTransform: 
 
+../include/list.h
+stdlib.h
+-
+
 ../include/load_data.h
 pthread.h
+-
+load_data_utils.h
+../include/load_data_utils.h
+
+../include/load_data_utils.h
+list.h
+../include/list.h
+stdio.h
+-
+string.h
 -
 
 /home/mrzs/Proj/part_darknet/src/load_data.cpp

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <pthread.h>
 #include "load_data.h"
-#include "load_data_utils.h"
 
 // /home/jackliu/Proj/darknet_rep/assets/yolov2.cfg
 //trainImagePath
@@ -31,12 +30,14 @@ int main(){
     list *l = parse_pathes(path);
     char** pathes = paths_to_array(l);
     printf("%s\n", pathes[20]);
+    printf("%d\n", l->size);
 
     char *image_path = "/home/mrzs/Desktop/d/jpgs/000001.jpg";
-    load_one_image(image_path);
-
+    char** pathes_picked = random_sample_pathes(pathes, 30, l->size);
+    //load_one_image(pathes_picked[5]);
+    
     pthread_t thread;
-    pthread_create(&thread, 0, thread_func, 0);
+    pthread_create(&thread, 0, load_thread, 0);
     pthread_join(thread, 0);
     return 0;
 }

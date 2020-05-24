@@ -24,3 +24,4 @@ char** paths_to_array(list *l){
     }
     return pathes;
 }
+

@@ -11,7 +11,4 @@ list *parse_pathes(char* file_path);
 
 char** paths_to_array(list *l);
 
-
-
-
 #endif

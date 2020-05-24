@@ -13,7 +13,9 @@ CMakeFiles/lib_core.dir/src/read_model.c.o
  ../include/read_model.h
  /home/mrzs/Proj/part_darknet/src/read_model.c
 CMakeFiles/lib_core.dir/src/load_data.cpp.o
+ ../include/list.h
  ../include/load_data.h
+ ../include/load_data_utils.h
  /home/mrzs/Proj/part_darknet/src/load_data.cpp
  /usr/local/include/opencv/cxcore.h
  /usr/local/include/opencv2/calib3d.hpp

@@ -2,6 +2,7 @@
 #define LOAD_DATA_H
 
 #include <pthread.h>
+#include "load_data_utils.h"
 
 typedef struct image{
     int height;
@@ -29,7 +30,7 @@ typedef struct load_args{
     char** paths;
     int threads;
     int n;
-
+    int m;
     
     data *d;
 }load_args;
@@ -48,9 +49,14 @@ extern "C"{
     pthread_t load_data(load_args args);
     void* load_thread(void* args);
 
+    float get_pixel_from_image(image im, int h, int w, int c);
+    image resize_image(image im, int height_new, int width_new);
+
     data concat_data(data d1, data d2);
     data concat_datas(data* d, int n);
     matrix concat_matrix(matrix m1, matrix m2);
+    char** random_sample_pathes(char** pathes, int n, int m);
+    
 
 #ifdef __cplusplus
 }

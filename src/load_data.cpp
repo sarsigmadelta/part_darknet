@@ -2,6 +2,8 @@
 #include <opencv2/highgui.hpp>
 
 
+
+
 image make_image(int height, int width, int channels){
     image im = {0};
     im.channels = channels;
@@ -57,7 +59,20 @@ void* dummy_func(void* a){
 
 
 void* load_thread(void* args){
-
+    load_args ptr = *(load_args*)args;
+    char** pathes = random_sample_pathes(ptr.paths, ptr.n, ptr.m);
+    data d = {0};
+    d.X.rows = ptr.n;
+    d.X.cols = ptr.height * ptr.width * ptr.channels;
+    d.X.data = (float**)calloc(ptr.n, sizeof(float*));
+    int i;
+    for(i=0; i<ptr.n; ++i){
+        image im_raw = load_one_image(pathes[i]);
+        cv::Mat mat_raw = image_to_mat(im_raw);
+        cv::imshow("index ", mat_raw);
+        cv::waitKey(0);
+    }
+    
 }
 
 pthread_t load_data_in_thread(load_args args){
@@ -89,6 +104,8 @@ void * load_threads(void* args){
     for(i=0; i<ptr.threads; ++i){
         pthread_join(threads[i], 0);
     }
+
+    *out = concat_datas(buffers, ptr.threads);
     
 }
 
@@ -132,4 +149,36 @@ data concat_datas(data* d, int n){
         out = new_;
     }
     return out;
+}
+
+char** random_sample_pathes(char** pathes, int n, int m){
+    char** pathes_sampled = (char**)calloc(n, sizeof(char*));
+    int i;
+    for(i=0; i<n; ++i){
+        int index = rand() % m;
+        pathes_sampled[i] = pathes[index];
+    }
+    return pathes_sampled;
+}
+
+float get_pixel_from_image(image im, int h, int w, int c){
+    if(h < 0 || h > im.height || w < 0 || w > im.width){
+        return 0.;
+    }
+    int index = c*im.height*im.width + h*im.width + w;
+    return im.data[index];
+}
+
+image resize_image(image im, int height_new, int width_new){
+    image rsz = make_image(height_new, width_new, im.channels);
+    int h, w, c;
+    for(c=0; c<im.channels; ++c){
+        for(h=0; h<rsz.height; ++h){
+            for(w=0; w<rsz.width; ++w){
+                float h_im = (h / rsz.height) * im.height;
+                float w_im = (w / rsz.width ) * im.width;
+                //float beta_h = 
+            }
+        }
+    }
 }
