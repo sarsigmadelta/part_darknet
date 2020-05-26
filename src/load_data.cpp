@@ -28,6 +28,14 @@ cv::Mat image_to_mat(image im){
     return mat;
 }
 
+void show_float_ptr(float *data, int height, int width, int channels){
+    image im = make_image(height, width, channels);
+    im.data = data;
+    cv::Mat mat = image_to_mat(im);
+    cv::imshow("float*", mat);
+    cv::waitKey(0);
+}
+
 image load_one_image(char *path){
     cv::Mat mat = cv::imread(path);
     int height = mat.rows;
@@ -45,10 +53,6 @@ image load_one_image(char *path){
             }
         }
     }
-    cv::Mat mat_c = image_to_mat(im);
-
-    cv::imshow("test", mat_c);
-    cv::waitKey(0);
     
     return im;
 }
@@ -68,15 +72,16 @@ void* load_thread(void* args){
     int i;
     for(i=0; i<ptr.n; ++i){
         image im_raw = load_one_image(pathes[i]);
-        cv::Mat mat_raw = image_to_mat(im_raw);
-        cv::imshow("index ", mat_raw);
-        cv::waitKey(0);
-    }
-    
+        d.X.data[i] = im_raw.data;
+
+    } 
+    printf("ptr.d %p\n", ptr.d);
+    ptr.d = &d;
 }
 
 pthread_t load_data_in_thread(load_args args){
     pthread_t thread;
+    printf("args.d %p\n", args.d);
     load_args* ptr = (load_args*)calloc(1, sizeof(load_args));
     *ptr = args;
     pthread_create(&thread, 0, load_thread, ptr);
@@ -94,7 +99,6 @@ void * load_threads(void* args){
     data* buffers = (data*)calloc(ptr.threads, sizeof(data));
     pthread_t *threads = (pthread_t*)calloc(ptr.threads, sizeof(pthread_t));
     int i;
-    
     for(i=0; i<ptr.threads; ++i){
         ptr.d = buffers + i;
         ptr.n = (i+1) * total / ptr.threads - i * total / ptr.threads ;
@@ -104,7 +108,6 @@ void * load_threads(void* args){
     for(i=0; i<ptr.threads; ++i){
         pthread_join(threads[i], 0);
     }
-
     *out = concat_datas(buffers, ptr.threads);
     
 }

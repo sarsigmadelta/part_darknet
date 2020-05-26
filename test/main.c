@@ -29,26 +29,26 @@ int main(){
     //list *l = read_cfg(path);
     list *l = parse_pathes(path);
     char** pathes = paths_to_array(l);
-    printf("%s\n", pathes[20]);
+    printf("%s\n", pathes[8999]);
     printf("%d\n", l->size);
 
     char *image_path = "/home/mrzs/Desktop/d/jpgs/000001.jpg";
-    char** pathes_picked = random_sample_pathes(pathes, 30, l->size);
-    load_one_image_debug(pathes_picked[5], 256, 256);
-    
+    char** pathes_picked = random_sample_pathes(pathes, 30, l->size - 1);
+    //load_one_image_debug(pathes_picked[5], 256, 256);
     data buffer;
-    load_args* args;
-    args->paths = pathes;
-    args->width = 512;
-    args->height = 512;
-    args->threads = 4;
-    args->channels = 3;
-    args->m = l->size;
-    args->d = &buffer;
-
+    load_args args = {0};
+    args.paths = pathes;
+    args.width = 512;
+    args.height = 512;
+    args.threads = 4;
+    args.channels = 3;
+    args.m = l->size;
+    args.d = &buffer;
+    args.n = 64;
     pthread_t thread;
-    pthread_create(&thread, 0, load_thread, args);
+    thread = load_data(args);
     pthread_join(thread, 0);
+    //show_float_ptr(args.d->X.data[0], args.height, args.width, args.channels);
     return 0;
 }
 

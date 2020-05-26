@@ -58,6 +58,7 @@ extern "C"{
     data concat_datas(data* d, int n);
     matrix concat_matrix(matrix m1, matrix m2);
     char** random_sample_pathes(char** pathes, int n, int m);
+    void show_float_ptr(float *data, int height, int width, int channels);
     
 
 #ifdef __cplusplus
