@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/im2col.h
+
 ../include/list.h
 stdlib.h
 -
@@ -25,6 +27,12 @@ stdio.h
 -
 string.h
 -
+
+/home/mrzs/Proj/part_darknet/src/im2col.c
+im2col.h
+/home/mrzs/Proj/part_darknet/src/im2col.h
+list.h
+/home/mrzs/Proj/part_darknet/src/list.h
 
 /home/mrzs/Proj/part_darknet/src/list.c
 list.h

@@ -75,13 +75,14 @@ void* load_thread(void* args){
         d.X.data[i] = im_raw.data;
 
     } 
-    printf("ptr.d %p\n", ptr.d);
-    ptr.d = &d;
+    //printf("ptr.d %p\n", ptr.d);
+    *ptr.d = d;
+    //printf("ptr.d after %p\n", ptr.d);
 }
 
 pthread_t load_data_in_thread(load_args args){
     pthread_t thread;
-    printf("args.d %p\n", args.d);
+    //printf("args.d %p\n", args.d);
     load_args* ptr = (load_args*)calloc(1, sizeof(load_args));
     *ptr = args;
     pthread_create(&thread, 0, load_thread, ptr);

@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lib_core.dir/src/read_model.c.o"
   "CMakeFiles/lib_core.dir/src/load_data.cpp.o"
   "CMakeFiles/lib_core.dir/src/load_data_utils.c.o"
+  "CMakeFiles/lib_core.dir/src/im2col.c.o"
   "liblib_core.pdb"
   "liblib_core.so"
 )

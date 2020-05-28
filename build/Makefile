@@ -136,6 +136,33 @@ lib_core/fast:
 	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/build
 .PHONY : lib_core/fast
 
+src/im2col.o: src/im2col.c.o
+
+.PHONY : src/im2col.o
+
+# target to build an object file
+src/im2col.c.o:
+	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/im2col.c.o
+.PHONY : src/im2col.c.o
+
+src/im2col.i: src/im2col.c.i
+
+.PHONY : src/im2col.i
+
+# target to preprocess a source file
+src/im2col.c.i:
+	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/im2col.c.i
+.PHONY : src/im2col.c.i
+
+src/im2col.s: src/im2col.c.s
+
+.PHONY : src/im2col.s
+
+# target to generate assembly for a file
+src/im2col.c.s:
+	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/im2col.c.s
+.PHONY : src/im2col.c.s
+
 src/list.o: src/list.c.o
 
 .PHONY : src/list.o
@@ -281,6 +308,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... demo"
 	@echo "... lib_core"
+	@echo "... src/im2col.o"
+	@echo "... src/im2col.i"
+	@echo "... src/im2col.s"
 	@echo "... src/list.o"
 	@echo "... src/list.i"
 	@echo "... src/list.s"

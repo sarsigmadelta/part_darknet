@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/im2col.h
+
 ../include/list.h
 stdlib.h
 -
@@ -45,4 +47,6 @@ pthread.h
 -
 load_data.h
 /home/mrzs/Proj/part_darknet/test/load_data.h
+im2col.h
+/home/mrzs/Proj/part_darknet/test/im2col.h
 
