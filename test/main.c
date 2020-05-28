@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include "load_data.h"
 #include "im2col.h"
+#include "matrix_mul.h"
 
 // /home/jackliu/Proj/darknet_rep/assets/yolov2.cfg
 //trainImagePath
@@ -50,6 +51,11 @@ int main(){
     thread = load_data(args);
     pthread_join(thread, 0);
     show_float_ptr(args.d->X.data[63], args.height, args.width, args.channels);
+
+    float *a = calloc(10, sizeof(float));
+    float *b = calloc(10, sizeof(float));
+    vector_add_called(a, b);
+
     return 0;
 }
 

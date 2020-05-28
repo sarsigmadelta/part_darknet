@@ -7,11 +7,11 @@ C_FLAGS = -pthread -fPIC
 
 C_DEFINES = -Dlib_core_EXPORTS
 
-C_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/include -I/usr/local/include/opencv 
+C_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/cuda/include -I/usr/local/include -I/usr/local/include/opencv 
 
-CXX_FLAGS = -fPIC  
+CXX_FLAGS = -fPIC -fPIC  
 
 CXX_DEFINES = -Dlib_core_EXPORTS
 
-CXX_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/include -I/usr/local/include/opencv 
+CXX_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/cuda/include -I/usr/local/include -I/usr/local/include/opencv 
 

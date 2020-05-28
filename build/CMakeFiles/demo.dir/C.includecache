@@ -28,6 +28,8 @@ stdio.h
 string.h
 -
 
+../include/matrix_mul.h
+
 ../include/read_model.h
 list.h
 ../include/list.h
@@ -49,4 +51,6 @@ load_data.h
 /home/mrzs/Proj/part_darknet/test/load_data.h
 im2col.h
 /home/mrzs/Proj/part_darknet/test/im2col.h
+matrix_mul.h
+/home/mrzs/Proj/part_darknet/test/matrix_mul.h
 

@@ -6,5 +6,6 @@ CMakeFiles/demo.dir/test/main.c.o
  ../include/list.h
  ../include/load_data.h
  ../include/load_data_utils.h
+ ../include/matrix_mul.h
  ../include/read_model.h
  /home/mrzs/Proj/part_darknet/test/main.c

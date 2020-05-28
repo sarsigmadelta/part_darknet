@@ -120,6 +120,9 @@ demo: /usr/local/lib/libopencv_dpm.so.3.4.3
 demo: /usr/local/lib/libopencv_hdf.so.3.4.3
 demo: /usr/local/lib/libopencv_xphoto.so.3.4.3
 demo: /usr/local/lib/libopencv_bgsegm.so.3.4.3
+demo: /usr/local/cuda/lib64/libcudart_static.a
+demo: /usr/lib/x86_64-linux-gnu/librt.so
+demo: /usr/local/cuda/lib64/libcudadevrt.a
 demo: /usr/local/lib/libopencv_shape.so.3.4.3
 demo: /usr/local/lib/libopencv_text.so.3.4.3
 demo: /usr/local/lib/libopencv_ml.so.3.4.3

@@ -6,5 +6,5 @@ C_FLAGS = -pthread
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -isystem /usr/local/include -isystem /usr/local/include/opencv 
+C_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/cuda/include -isystem /usr/local/include -isystem /usr/local/include/opencv 
 
