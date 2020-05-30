@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 list* make_list(){
-    list* l = malloc(sizeof(list));
+    list* l = (list*)malloc(sizeof(list));
     l->back = 0;
     l->front = 0;
     l->size = 0;
@@ -10,7 +10,7 @@ list* make_list(){
 }
 
 void insert_list(list* l, void* data){
-    node *n = malloc(sizeof(node));
+    node *n = (node*)malloc(sizeof(node));
     n->val = data;
     n->next = 0;
     

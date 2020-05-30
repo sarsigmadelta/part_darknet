@@ -208,7 +208,7 @@ CUDA_GENERATED_OUTPUT_DIR:PATH=
 CUDA_HOST_COMPILATION_CPP:BOOL=ON
 
 //Host side compiler used by NVCC
-CUDA_HOST_COMPILER:FILEPATH=/usr/bin/cc
+CUDA_HOST_COMPILER:FILEPATH=g++
 
 //Path to a program.
 CUDA_NVCC_EXECUTABLE:FILEPATH=/usr/local/cuda/bin/nvcc
@@ -305,7 +305,10 @@ build_darknet_BINARY_DIR:STATIC=/home/mrzs/Proj/part_darknet/build
 build_darknet_SOURCE_DIR:STATIC=/home/mrzs/Proj/part_darknet
 
 //Dependencies for the target
-lib_core_LIB_DEPENDS:STATIC=general;/usr/local/cuda/lib64/libcudart_static.a;general;dl;general;/usr/lib/x86_64-linux-gnu/librt.so;general;/usr/local/cuda/lib64/libcudadevrt.a;
+lib_core_cu_LIB_DEPENDS:STATIC=general;/usr/local/cuda/lib64/libcudart_static.a;general;dl;general;/usr/lib/x86_64-linux-gnu/librt.so;
+
+//Dependencies for target
+lib_core_cxx_LIB_DEPENDS:STATIC=
 
 
 ########################
@@ -455,7 +458,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
 //List of intermediate files that are part of the cuda dependency
 // scanning.
-CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core.dir/src/lib_core_generated_matrix_mul.cu.o.depend
+CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o.depend
 //ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_BUILD_CUBIN

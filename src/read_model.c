@@ -4,7 +4,7 @@
 
 char *read_line(FILE* fp){
     int len = 128;
-    char *line = calloc(len, sizeof(char));
+    char *line = (char*)calloc(len, sizeof(char));
     if(!fgets(line, len, fp)){
         return 0;
     }
@@ -16,7 +16,7 @@ char *read_line(FILE* fp){
 int read_options(list* l, char* line){
     char *key = 0;
     char *val = 0;
-    kvp *k = calloc(1, sizeof(kvp));
+    kvp *k = (kvp*)calloc(1, sizeof(kvp));
     int size = strlen(line);
     if(size==0){
         return 1;
@@ -50,7 +50,7 @@ list *read_cfg(char* file_path){
     while(line = read_line(fp)){
         switch(line[0]){
             case '[':
-                current = calloc(1, sizeof(section));
+                current = (section*)calloc(1, sizeof(section));
                 current->option = make_list();
                 current->type = line; 
                 insert_list(options, current);

@@ -13,8 +13,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.9.2/CMakeSystem.cmake"
   "CMakeFiles/feature_tests.c"
   "CMakeFiles/feature_tests.cxx"
-  "CMakeFiles/lib_core.dir/src/lib_core_generated_matrix_mul.cu.o.cmake.pre-gen"
-  "CMakeFiles/lib_core.dir/src/lib_core_generated_matrix_mul.cu.o.depend"
+  "CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o.cmake.pre-gen"
+  "CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o.depend"
   "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
   "/usr/local/share/OpenCV/OpenCVConfig.cmake"
   "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
@@ -126,13 +126,14 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.9.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.9.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.9.2/CMakeCXXCompiler.cmake"
-  "CMakeFiles/lib_core.dir/src/lib_core_generated_matrix_mul.cu.o.cmake.pre-gen"
-  "CMakeFiles/lib_core.dir/src/lib_core_generated_matrix_mul.cu.o.cmake"
+  "CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o.cmake.pre-gen"
+  "CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/lib_core_cxx.dir/DependInfo.cmake"
+  "CMakeFiles/lib_core_cu.dir/DependInfo.cmake"
   "CMakeFiles/demo.dir/DependInfo.cmake"
-  "CMakeFiles/lib_core.dir/DependInfo.cmake"
   )

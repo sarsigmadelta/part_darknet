@@ -29,6 +29,8 @@ string.h
 -
 
 ../include/matrix_mul.h
+load_data.h
+../include/load_data.h
 
 ../include/read_model.h
 list.h

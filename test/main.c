@@ -36,7 +36,7 @@ int main(){
 
     char *image_path = "/home/mrzs/Desktop/d/jpgs/000001.jpg";
     char** pathes_picked = random_sample_pathes(pathes, 30, l->size - 1);
-    //load_one_image_debug(pathes_picked[5], 256, 256);
+    image im_loaded = load_one_image_debug(pathes_picked[5], 256, 256);
     data buffer;
     load_args args = {0};
     args.paths = pathes;
@@ -50,10 +50,12 @@ int main(){
     pthread_t thread;
     thread = load_data(args);
     pthread_join(thread, 0);
-    show_float_ptr(args.d->X.data[63], args.height, args.width, args.channels);
+    //show_float_ptr(args.d->X.data[63], args.height, args.width, args.channels);
 
-    float *a = calloc(10, sizeof(float));
-    float *b = calloc(10, sizeof(float));
+    image_smooth_test(im_loaded);
+    show_float_ptr(im_loaded.data, im_loaded.height, im_loaded.width, im_loaded.channels);
+    float *a = (float*)calloc(10, sizeof(float));
+    float *b = (float*)calloc(10, sizeof(float));
     vector_add_called(a, b);
 
     return 0;

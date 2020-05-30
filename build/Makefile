@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lib_core_cxx
+
+# Build rule for target.
+lib_core_cxx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lib_core_cxx
+.PHONY : lib_core_cxx
+
+# fast build rule for target.
+lib_core_cxx/fast:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/build
+.PHONY : lib_core_cxx/fast
+
+#=============================================================================
+# Target rules for targets named lib_core_cu
+
+# Build rule for target.
+lib_core_cu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lib_core_cu
+.PHONY : lib_core_cu
+
+# fast build rule for target.
+lib_core_cu/fast:
+	$(MAKE) -f CMakeFiles/lib_core_cu.dir/build.make CMakeFiles/lib_core_cu.dir/build
+.PHONY : lib_core_cu/fast
+
+#=============================================================================
 # Target rules for targets named demo
 
 # Build rule for target.
@@ -123,26 +149,13 @@ demo/fast:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
-#=============================================================================
-# Target rules for targets named lib_core
-
-# Build rule for target.
-lib_core: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lib_core
-.PHONY : lib_core
-
-# fast build rule for target.
-lib_core/fast:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/build
-.PHONY : lib_core/fast
-
 src/im2col.o: src/im2col.c.o
 
 .PHONY : src/im2col.o
 
 # target to build an object file
 src/im2col.c.o:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/im2col.c.o
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/im2col.c.o
 .PHONY : src/im2col.c.o
 
 src/im2col.i: src/im2col.c.i
@@ -151,7 +164,7 @@ src/im2col.i: src/im2col.c.i
 
 # target to preprocess a source file
 src/im2col.c.i:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/im2col.c.i
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/im2col.c.i
 .PHONY : src/im2col.c.i
 
 src/im2col.s: src/im2col.c.s
@@ -160,7 +173,7 @@ src/im2col.s: src/im2col.c.s
 
 # target to generate assembly for a file
 src/im2col.c.s:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/im2col.c.s
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/im2col.c.s
 .PHONY : src/im2col.c.s
 
 src/list.o: src/list.c.o
@@ -169,7 +182,7 @@ src/list.o: src/list.c.o
 
 # target to build an object file
 src/list.c.o:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/list.c.o
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/list.c.o
 .PHONY : src/list.c.o
 
 src/list.i: src/list.c.i
@@ -178,7 +191,7 @@ src/list.i: src/list.c.i
 
 # target to preprocess a source file
 src/list.c.i:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/list.c.i
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/list.c.i
 .PHONY : src/list.c.i
 
 src/list.s: src/list.c.s
@@ -187,7 +200,7 @@ src/list.s: src/list.c.s
 
 # target to generate assembly for a file
 src/list.c.s:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/list.c.s
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/list.c.s
 .PHONY : src/list.c.s
 
 src/load_data.o: src/load_data.cpp.o
@@ -196,7 +209,7 @@ src/load_data.o: src/load_data.cpp.o
 
 # target to build an object file
 src/load_data.cpp.o:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data.cpp.o
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data.cpp.o
 .PHONY : src/load_data.cpp.o
 
 src/load_data.i: src/load_data.cpp.i
@@ -205,7 +218,7 @@ src/load_data.i: src/load_data.cpp.i
 
 # target to preprocess a source file
 src/load_data.cpp.i:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data.cpp.i
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data.cpp.i
 .PHONY : src/load_data.cpp.i
 
 src/load_data.s: src/load_data.cpp.s
@@ -214,7 +227,7 @@ src/load_data.s: src/load_data.cpp.s
 
 # target to generate assembly for a file
 src/load_data.cpp.s:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data.cpp.s
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data.cpp.s
 .PHONY : src/load_data.cpp.s
 
 src/load_data_utils.o: src/load_data_utils.c.o
@@ -223,7 +236,7 @@ src/load_data_utils.o: src/load_data_utils.c.o
 
 # target to build an object file
 src/load_data_utils.c.o:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data_utils.c.o
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.o
 .PHONY : src/load_data_utils.c.o
 
 src/load_data_utils.i: src/load_data_utils.c.i
@@ -232,7 +245,7 @@ src/load_data_utils.i: src/load_data_utils.c.i
 
 # target to preprocess a source file
 src/load_data_utils.c.i:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data_utils.c.i
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.i
 .PHONY : src/load_data_utils.c.i
 
 src/load_data_utils.s: src/load_data_utils.c.s
@@ -241,7 +254,7 @@ src/load_data_utils.s: src/load_data_utils.c.s
 
 # target to generate assembly for a file
 src/load_data_utils.c.s:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/load_data_utils.c.s
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.s
 .PHONY : src/load_data_utils.c.s
 
 src/read_model.o: src/read_model.c.o
@@ -250,7 +263,7 @@ src/read_model.o: src/read_model.c.o
 
 # target to build an object file
 src/read_model.c.o:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/read_model.c.o
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/read_model.c.o
 .PHONY : src/read_model.c.o
 
 src/read_model.i: src/read_model.c.i
@@ -259,7 +272,7 @@ src/read_model.i: src/read_model.c.i
 
 # target to preprocess a source file
 src/read_model.c.i:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/read_model.c.i
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/read_model.c.i
 .PHONY : src/read_model.c.i
 
 src/read_model.s: src/read_model.c.s
@@ -268,7 +281,7 @@ src/read_model.s: src/read_model.c.s
 
 # target to generate assembly for a file
 src/read_model.c.s:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/src/read_model.c.s
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/read_model.c.s
 .PHONY : src/read_model.c.s
 
 test/main.o: test/main.c.o
@@ -305,9 +318,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
+	@echo "... lib_core_cxx"
+	@echo "... lib_core_cu"
 	@echo "... demo"
-	@echo "... lib_core"
+	@echo "... edit_cache"
 	@echo "... src/im2col.o"
 	@echo "... src/im2col.i"
 	@echo "... src/im2col.s"

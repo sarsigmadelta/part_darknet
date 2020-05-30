@@ -60,10 +60,85 @@ CMAKE_SOURCE_DIR = /home/mrzs/Proj/part_darknet
 CMAKE_BINARY_DIR = /home/mrzs/Proj/part_darknet/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/lib_core_cxx.dir
+
+# All Build rule for target.
+CMakeFiles/lib_core_cxx.dir/all:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/depend
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mrzs/Proj/part_darknet/build/CMakeFiles --progress-num=5,6,7,8,9,10 "Built target lib_core_cxx"
+.PHONY : CMakeFiles/lib_core_cxx.dir/all
+
+# Include target in all.
+all: CMakeFiles/lib_core_cxx.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lib_core_cxx.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lib_core_cxx.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 0
+.PHONY : CMakeFiles/lib_core_cxx.dir/rule
+
+# Convenience name for target.
+lib_core_cxx: CMakeFiles/lib_core_cxx.dir/rule
+
+.PHONY : lib_core_cxx
+
+# clean rule for target.
+CMakeFiles/lib_core_cxx.dir/clean:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/clean
+.PHONY : CMakeFiles/lib_core_cxx.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/lib_core_cxx.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/lib_core_cu.dir
+
+# All Build rule for target.
+CMakeFiles/lib_core_cu.dir/all:
+	$(MAKE) -f CMakeFiles/lib_core_cu.dir/build.make CMakeFiles/lib_core_cu.dir/depend
+	$(MAKE) -f CMakeFiles/lib_core_cu.dir/build.make CMakeFiles/lib_core_cu.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mrzs/Proj/part_darknet/build/CMakeFiles --progress-num=3,4 "Built target lib_core_cu"
+.PHONY : CMakeFiles/lib_core_cu.dir/all
+
+# Include target in all.
+all: CMakeFiles/lib_core_cu.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lib_core_cu.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lib_core_cu.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 0
+.PHONY : CMakeFiles/lib_core_cu.dir/rule
+
+# Convenience name for target.
+lib_core_cu: CMakeFiles/lib_core_cu.dir/rule
+
+.PHONY : lib_core_cu
+
+# clean rule for target.
+CMakeFiles/lib_core_cu.dir/clean:
+	$(MAKE) -f CMakeFiles/lib_core_cu.dir/build.make CMakeFiles/lib_core_cu.dir/clean
+.PHONY : CMakeFiles/lib_core_cu.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/lib_core_cu.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/demo.dir
 
 # All Build rule for target.
-CMakeFiles/demo.dir/all: CMakeFiles/lib_core.dir/all
+CMakeFiles/demo.dir/all: CMakeFiles/lib_core_cxx.dir/all
+CMakeFiles/demo.dir/all: CMakeFiles/lib_core_cu.dir/all
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/depend
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mrzs/Proj/part_darknet/build/CMakeFiles --progress-num=1,2 "Built target demo"
@@ -93,43 +168,6 @@ CMakeFiles/demo.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/demo.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/lib_core.dir
-
-# All Build rule for target.
-CMakeFiles/lib_core.dir/all:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/depend
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mrzs/Proj/part_darknet/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10 "Built target lib_core"
-.PHONY : CMakeFiles/lib_core.dir/all
-
-# Include target in all.
-all: CMakeFiles/lib_core.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/lib_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lib_core.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 0
-.PHONY : CMakeFiles/lib_core.dir/rule
-
-# Convenience name for target.
-lib_core: CMakeFiles/lib_core.dir/rule
-
-.PHONY : lib_core
-
-# clean rule for target.
-CMakeFiles/lib_core.dir/clean:
-	$(MAKE) -f CMakeFiles/lib_core.dir/build.make CMakeFiles/lib_core.dir/clean
-.PHONY : CMakeFiles/lib_core.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/lib_core.dir/clean
 
 .PHONY : clean
 

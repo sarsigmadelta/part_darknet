@@ -60,15 +60,15 @@ include CMakeFiles/demo.dir/flags.make
 CMakeFiles/demo.dir/test/main.c.o: CMakeFiles/demo.dir/flags.make
 CMakeFiles/demo.dir/test/main.c.o: ../test/main.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mrzs/Proj/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/demo.dir/test/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo.dir/test/main.c.o   -c /home/mrzs/Proj/part_darknet/test/main.c
+	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo.dir/test/main.c.o   -c /home/mrzs/Proj/part_darknet/test/main.c
 
 CMakeFiles/demo.dir/test/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/demo.dir/test/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mrzs/Proj/part_darknet/test/main.c > CMakeFiles/demo.dir/test/main.c.i
+	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mrzs/Proj/part_darknet/test/main.c > CMakeFiles/demo.dir/test/main.c.i
 
 CMakeFiles/demo.dir/test/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo.dir/test/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mrzs/Proj/part_darknet/test/main.c -o CMakeFiles/demo.dir/test/main.c.s
+	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mrzs/Proj/part_darknet/test/main.c -o CMakeFiles/demo.dir/test/main.c.s
 
 CMakeFiles/demo.dir/test/main.c.o.requires:
 
@@ -90,7 +90,8 @@ demo_EXTERNAL_OBJECTS =
 
 demo: CMakeFiles/demo.dir/test/main.c.o
 demo: CMakeFiles/demo.dir/build.make
-demo: liblib_core.so
+demo: liblib_core_cxx.so
+demo: liblib_core_cu.so
 demo: /usr/local/lib/libopencv_stitching.so.3.4.3
 demo: /usr/local/lib/libopencv_superres.so.3.4.3
 demo: /usr/local/lib/libopencv_videostab.so.3.4.3
@@ -122,7 +123,6 @@ demo: /usr/local/lib/libopencv_xphoto.so.3.4.3
 demo: /usr/local/lib/libopencv_bgsegm.so.3.4.3
 demo: /usr/local/cuda/lib64/libcudart_static.a
 demo: /usr/lib/x86_64-linux-gnu/librt.so
-demo: /usr/local/cuda/lib64/libcudadevrt.a
 demo: /usr/local/lib/libopencv_shape.so.3.4.3
 demo: /usr/local/lib/libopencv_text.so.3.4.3
 demo: /usr/local/lib/libopencv_ml.so.3.4.3

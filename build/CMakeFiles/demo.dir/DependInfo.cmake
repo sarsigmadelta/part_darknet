@@ -18,7 +18,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core.dir/DependInfo.cmake"
+  "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/DependInfo.cmake"
+  "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
