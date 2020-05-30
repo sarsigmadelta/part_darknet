@@ -53,6 +53,7 @@ int main(){
     //show_float_ptr(args.d->X.data[63], args.height, args.width, args.channels);
 
     image_smooth_test(im_loaded);
+    printf("%f, %f\n", im_loaded.data[100], im_loaded.data[300]);
     show_float_ptr(im_loaded.data, im_loaded.height, im_loaded.width, im_loaded.channels);
     float *a = (float*)calloc(10, sizeof(float));
     float *b = (float*)calloc(10, sizeof(float));

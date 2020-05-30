@@ -9,11 +9,13 @@ __global__ void vector_add(float *a, float *b){
 }
 
 __global__ void pixel_remove(image* im){
-    int idx_x = threadIdx.x + blockDim.x * blockDim.x;
-    int idx_y = threadIdx.y + blockDim.y * blockDim.y;
-    int index = idx_y * im->width + idx_x;
-    im->data[index] *= 0.0;
-    //printf("im->data[index] %f\n", im->data[index]);
+    int col = threadIdx.x + blockIdx.x * blockDim.x;
+    int row = threadIdx.y + blockIdx.y * blockDim.y;
+    int c = 0;
+    for(c=0; c<im->channels; ++c){
+        int index = c * im->height * im->width + row * im->width + col;
+        im->data[index] = 0.1;
+    }
 }
 
 void vector_add_called(float *a, float *b){
@@ -26,6 +28,10 @@ void image_smooth_test(image im){
     size_t nBytes = im.height * im.width * im.channels * sizeof(float);
     image *im_d ;
     cudaMallocManaged((void**)&im_d, sizeof(image));
+    im_d->width = im.width;
+    im_d->height = im.height;
+    im_d->channels = im.channels;
+    
     cudaMallocManaged((void**)&im_d->data, nBytes);
     cudaMemcpy(im_d->data, im.data, nBytes, cudaMemcpyHostToDevice);
 
