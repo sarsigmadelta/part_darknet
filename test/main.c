@@ -25,6 +25,16 @@ void *thread_func(void* ptr){
     return 0;
 }
 
+#if 0
+int main(){
+    image im = gen_random_image(3,5,5);
+    show_im2col_result(im, 3,1,0);
+    //show_image(&im);
+    return 0;
+}
+#endif
+
+
 int main(){
 
     char *path = "/home/mrzs/Proj/part_darknet/assets/trainImagePath.txt";
@@ -37,6 +47,7 @@ int main(){
     char *image_path = "/home/mrzs/Desktop/d/jpgs/000001.jpg";
     char** pathes_picked = random_sample_pathes(pathes, 30, l->size - 1);
     image im_loaded = load_one_image_debug(pathes_picked[5], 256, 256);
+    //show_im2col_result(im_loaded, 3,1,0);
     data buffer;
     load_args args = {0};
     args.paths = pathes;
@@ -61,4 +72,3 @@ int main(){
 
     return 0;
 }
-

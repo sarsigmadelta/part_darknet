@@ -20,7 +20,7 @@ void im2col(float *im,
     int out_h = (height + 2*pad - ksize) / stride + 1;
     int out_w = (width + 2*pad - ksize) / stride + 1;
     int channels_cols = ksize * ksize * channels;
-    data_col = (float*)calloc(channels_cols * out_h * out_w, sizeof(float));
+    //data_col = (float*)calloc(channels_cols * out_h * out_w, sizeof(float));
 
     int h,w,c;
     for(c=0; c<channels_cols; ++c){
@@ -36,4 +36,31 @@ void im2col(float *im,
             }
         }
     }
+}
+
+void show_im2col_result(image im, int ksize, int stride, int pad){
+    printf("before im2col....\n");
+    show_image(&im);
+    
+    int out_h = (im.height + 2*pad - ksize) / stride + 1;
+    int out_w = (im.width + 2*pad - ksize) / stride + 1;
+    int channels_cols = ksize * ksize * im.channels;
+    float *data_col = (float*)calloc(channels_cols * out_h * out_w, sizeof(float));
+
+    im2col(im.data, 
+            im.channels, im.height, im.width,
+            ksize, stride, pad, data_col);
+    
+    printf("after im2col....\n");
+
+    int i, j;
+    for(i=0; i<channels_cols; ++i){
+        for(int j=0; j<out_h * out_w; ++j){
+            int index = i * out_h * out_w + j;
+            printf("%f ", data_col[index]);
+        }
+        printf("\n");
+    }
+    
+
 }

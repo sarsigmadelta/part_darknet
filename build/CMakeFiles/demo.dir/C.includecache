@@ -7,6 +7,12 @@
 #IncludeRegexTransform: 
 
 ../include/im2col.h
+stdio.h
+-
+stdlib.h
+-
+load_data.h
+../include/load_data.h
 
 ../include/list.h
 stdlib.h
