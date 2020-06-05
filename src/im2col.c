@@ -40,7 +40,7 @@ void im2col(float *im,
 
 void show_im2col_result(image im, int ksize, int stride, int pad){
     printf("before im2col....\n");
-    show_image(&im);
+    //show_image(&im);
     
     int out_h = (im.height + 2*pad - ksize) / stride + 1;
     int out_w = (im.width + 2*pad - ksize) / stride + 1;
@@ -53,7 +53,7 @@ void show_im2col_result(image im, int ksize, int stride, int pad){
     
     printf("after im2col....\n");
 
-    int i, j;
+/*    int i, j;
     for(i=0; i<channels_cols; ++i){
         for(int j=0; j<out_h * out_w; ++j){
             int index = i * out_h * out_w + j;
@@ -61,6 +61,6 @@ void show_im2col_result(image im, int ksize, int stride, int pad){
         }
         printf("\n");
     }
-    
+*/
 
 }
