@@ -32,7 +32,8 @@ add_library(lib_core_cxx SHARED src/load_data.cpp
                                  	 src/im2col.c 
                                  	 src/list.c
                                  	 src/load_data_utils.c
-                                 	 src/read_model.c )
+                                 	 src/read_model.c 
+									 src/parse_utils.c)
 
 cuda_add_library(lib_core_cu SHARED src/matrix_mul.cu
 									src/im2col_gpu.cu)

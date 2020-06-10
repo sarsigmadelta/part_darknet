@@ -58,6 +58,8 @@ stdio.h
 load_data_utils.h
 /home/mrzs/Proj/part_darknet/src/load_data_utils.h
 
+/home/mrzs/Proj/part_darknet/src/parse_utils.c
+
 /home/mrzs/Proj/part_darknet/src/read_model.c
 read_model.h
 /home/mrzs/Proj/part_darknet/src/read_model.h

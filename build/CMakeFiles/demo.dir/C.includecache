@@ -38,6 +38,12 @@ string.h
 load_data.h
 ../include/load_data.h
 
+../include/parse_utils.h
+list.h
+../include/list.h
+string.h
+-
+
 ../include/read_model.h
 list.h
 ../include/list.h
@@ -61,4 +67,6 @@ im2col.h
 /home/mrzs/Proj/part_darknet/test/im2col.h
 matrix_mul.h
 /home/mrzs/Proj/part_darknet/test/matrix_mul.h
+parse_utils.h
+/home/mrzs/Proj/part_darknet/test/parse_utils.h
 
