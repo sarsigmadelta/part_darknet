@@ -16,6 +16,8 @@ struct layer{
     int h;
     int c;
 
+    int batch;
+
     int out_h;
     int out_w;
     int out_c;
@@ -25,7 +27,7 @@ struct layer{
     int pad;
 
     int inputs;
-    int output;
+    int outputs;
     int nweights;
 
     float *input;

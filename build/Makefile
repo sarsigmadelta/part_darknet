@@ -149,6 +149,33 @@ demo/fast:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
+src/convolution_layer.o: src/convolution_layer.c.o
+
+.PHONY : src/convolution_layer.o
+
+# target to build an object file
+src/convolution_layer.c.o:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o
+.PHONY : src/convolution_layer.c.o
+
+src/convolution_layer.i: src/convolution_layer.c.i
+
+.PHONY : src/convolution_layer.i
+
+# target to preprocess a source file
+src/convolution_layer.c.i:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.i
+.PHONY : src/convolution_layer.c.i
+
+src/convolution_layer.s: src/convolution_layer.c.s
+
+.PHONY : src/convolution_layer.s
+
+# target to generate assembly for a file
+src/convolution_layer.c.s:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.s
+.PHONY : src/convolution_layer.c.s
+
 src/im2col.o: src/im2col.c.o
 
 .PHONY : src/im2col.o
@@ -349,6 +376,9 @@ help:
 	@echo "... lib_core_cu"
 	@echo "... demo"
 	@echo "... edit_cache"
+	@echo "... src/convolution_layer.o"
+	@echo "... src/convolution_layer.i"
+	@echo "... src/convolution_layer.s"
 	@echo "... src/im2col.o"
 	@echo "... src/im2col.i"
 	@echo "... src/im2col.s"
