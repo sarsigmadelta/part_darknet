@@ -176,6 +176,33 @@ src/convolution_layer.c.s:
 	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.s
 .PHONY : src/convolution_layer.c.s
 
+src/gemm.o: src/gemm.c.o
+
+.PHONY : src/gemm.o
+
+# target to build an object file
+src/gemm.c.o:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/gemm.c.o
+.PHONY : src/gemm.c.o
+
+src/gemm.i: src/gemm.c.i
+
+.PHONY : src/gemm.i
+
+# target to preprocess a source file
+src/gemm.c.i:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/gemm.c.i
+.PHONY : src/gemm.c.i
+
+src/gemm.s: src/gemm.c.s
+
+.PHONY : src/gemm.s
+
+# target to generate assembly for a file
+src/gemm.c.s:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/gemm.c.s
+.PHONY : src/gemm.c.s
+
 src/im2col.o: src/im2col.c.o
 
 .PHONY : src/im2col.o
@@ -379,6 +406,9 @@ help:
 	@echo "... src/convolution_layer.o"
 	@echo "... src/convolution_layer.i"
 	@echo "... src/convolution_layer.s"
+	@echo "... src/gemm.o"
+	@echo "... src/gemm.i"
+	@echo "... src/gemm.s"
 	@echo "... src/im2col.o"
 	@echo "... src/im2col.i"
 	@echo "... src/im2col.s"

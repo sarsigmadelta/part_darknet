@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/gemm.h
+stdio.h
+-
+stdlib.h
+-
+
 ../include/im2col.h
 stdio.h
 -
@@ -69,4 +75,6 @@ matrix_mul.h
 /home/mrzs/Proj/part_darknet/test/matrix_mul.h
 parse_utils.h
 /home/mrzs/Proj/part_darknet/test/parse_utils.h
+gemm.h
+/home/mrzs/Proj/part_darknet/test/gemm.h
 

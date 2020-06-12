@@ -34,10 +34,12 @@ add_library(lib_core_cxx SHARED src/load_data.cpp
                                  	 src/load_data_utils.c
                                  	 src/read_model.c 
 									 src/parse_utils.c
-									 src/convolution_layer.c)
+									 src/convolution_layer.c
+									 src/gemm.c)
 
 cuda_add_library(lib_core_cu SHARED src/matrix_mul.cu
-									src/im2col_gpu.cu)
+									src/im2col_gpu.cu
+									src/gemm.cu)
 
 ADD_EXECUTABLE(demo "test/main.c")
 

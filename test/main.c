@@ -6,7 +6,7 @@
 #include "im2col.h"
 #include "matrix_mul.h"
 #include "parse_utils.h"
-
+#include "gemm.h"
 // /home/jackliu/Proj/darknet_rep/assets/yolov2.cfg
 //trainImagePath
 
@@ -30,13 +30,13 @@ void show_model(list *l){
     printf("%s\n", current->type);
     char *momentum = option_find(current->option, "batch");
     printf("momentum is %s\n", momentum);
-/*    while(f){
+    while(f){
         section* current = (section*)f->val;
         char *type = current->type;
         list *options = current->option;
         show_options(options);
         f = f->next;
-    }*/
+    }
 }
 
 void *thread_func(void* ptr){

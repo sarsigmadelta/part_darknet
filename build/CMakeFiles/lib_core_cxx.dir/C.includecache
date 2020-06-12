@@ -14,6 +14,12 @@ darknet.h
 list.h
 ../include/list.h
 
+../include/gemm.h
+stdio.h
+-
+stdlib.h
+-
+
 ../include/im2col.h
 stdio.h
 -
@@ -53,6 +59,10 @@ string.h
 /home/mrzs/Proj/part_darknet/src/convolution_layer.c
 convolution_layer.h
 /home/mrzs/Proj/part_darknet/src/convolution_layer.h
+
+/home/mrzs/Proj/part_darknet/src/gemm.c
+gemm.h
+/home/mrzs/Proj/part_darknet/src/gemm.h
 
 /home/mrzs/Proj/part_darknet/src/im2col.c
 im2col.h

@@ -6,6 +6,9 @@ CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/darknet.h
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/list.h
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../src/convolution_layer.c
 
+CMakeFiles/lib_core_cxx.dir/src/gemm.c.o: ../include/gemm.h
+CMakeFiles/lib_core_cxx.dir/src/gemm.c.o: ../src/gemm.c
+
 CMakeFiles/lib_core_cxx.dir/src/im2col.c.o: ../include/im2col.h
 CMakeFiles/lib_core_cxx.dir/src/im2col.c.o: ../include/list.h
 CMakeFiles/lib_core_cxx.dir/src/im2col.c.o: ../include/load_data.h
