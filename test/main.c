@@ -44,9 +44,19 @@ void *thread_func(void* ptr){
 }
 
 int main(){
-    char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2.cfg";
-    list *model = read_cfg(cfg_path);
-    show_model(model);
+    //char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2.cfg";
+    //list *model = read_cfg(cfg_path);
+    //show_model(model);
+    int m = 1000;
+    int n = 4000;
+    int k = 1000;
+    float alpha = 1.;
+    float *a = rand_data(m, k);
+    float *b = rand_data(k, n);
+    float *c = (float*)calloc(m*n, sizeof(float));
+
+    timing_for_gemm(gemm_nn, m, n, k, alpha, a, k, b, n, c, n);
+    timing_for_gemm(gemm_nn_col, m, n, k, alpha, a, k, b, n, c, n);
     return 0;
 }
 

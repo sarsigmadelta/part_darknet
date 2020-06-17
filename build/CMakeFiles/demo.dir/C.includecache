@@ -11,6 +11,8 @@ stdio.h
 -
 stdlib.h
 -
+ctime
+-
 
 ../include/im2col.h
 stdio.h
