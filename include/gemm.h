@@ -15,7 +15,7 @@ void gemm_nn_col(int m, int n, int k, float alpha,
 			 float *b, int lb, 
 			 float *c, int lc);
 
-void gemm_gpu_nn(int m, int n, int k, int alpha, 
+void gemm_gpu_nn(int m, int n, int k, float alpha, 
 			 	 float* a, int la, 
 			 	 float *b, int lb, 
 			 	 float *c, int lc);

@@ -4,7 +4,7 @@
 
 #define BLOCKSIZE 16
 
-__global__ void gemm_nn_kernel( int m, int n, int k, int alpha, 
+__global__ void gemm_nn_kernel( int m, int n, int k, float alpha, 
 			 	                float* a, int la, 
 			 	                float *b, int lb, 
 			 	                float *c, int lc){
@@ -14,13 +14,14 @@ __global__ void gemm_nn_kernel( int m, int n, int k, int alpha,
     int i;
     float sum = 0.;
     for(i=0; i<k; ++i){
-        sum += alpha * a[row * la + k] * b[k * lb + col];
+        sum += alpha * a[row * la + i] * b[i * lb + col];
     }
     c[row * lc + col] = sum;
+    //printf("%d\t%d\t%f\n", row, col, c[row * lc + col]);
 }
 
 
-void gemm_gpu_nn(int m, int n, int k, int alpha, 
+void gemm_gpu_nn(int m, int n, int k, float alpha, 
 			 	 float* a, int la, 
 			 	 float *b, int lb, 
 			 	 float *c, int lc){
@@ -29,17 +30,22 @@ void gemm_gpu_nn(int m, int n, int k, int alpha,
     size_t size_b = k * n * sizeof(float);
     size_t size_c = m * n * sizeof(float);
 
-    cudaMallocManaged((void**)&d_a, size_a);
-    cudaMallocManaged((void**)&d_b, size_b);
-    cudaMallocManaged((void**)&d_c, size_c);
+    cudaError_t cudaStatus1 = cudaMallocManaged((void**)&d_a, size_a);
+    cudaError_t cudaStatus2 = cudaMallocManaged((void**)&d_b, size_b);
+    cudaError_t cudaStatus3 = cudaMallocManaged((void**)&d_c, size_c);
 
-    cudaMemcpy(d_a, a, size_a, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_b, b, size_b, cudaMemcpyHostToDevice);
+    cudaError_t cudaStatus4 = cudaMemcpy(d_a, a, size_a, cudaMemcpyHostToDevice);
+    cudaError_t cudaStatus5 = cudaMemcpy(d_b, b, size_b, cudaMemcpyHostToDevice);
 
     dim3 blockSize(BLOCKSIZE, BLOCKSIZE);
     dim3 gridSize((m + BLOCKSIZE - 1)/BLOCKSIZE, (n + BLOCKSIZE - 1)/BLOCKSIZE);
-
     gemm_nn_kernel<<<gridSize, blockSize>>>(m, n, k, alpha, d_a, la, d_b, lb, d_c, lc);
-    cudaMemcpy(c, d_c, size_c, cudaMemcpyDeviceToHost);
+
+    cudaError_t cudaStatus6 = cudaMemcpy(c, d_c, size_c, cudaMemcpyDeviceToHost);  
+
+    if(cudaStatus1 != cudaSuccess || cudaStatus2 != cudaSuccess || cudaStatus3 != cudaSuccess ||
+       cudaStatus4 != cudaSuccess || cudaStatus5 != cudaSuccess || cudaStatus6 != cudaSuccess){
+        printf("kernel function failed...\n");
+    }
     
 }

@@ -48,15 +48,32 @@ int main(){
     //list *model = read_cfg(cfg_path);
     //show_model(model);
     int m = 1000;
-    int n = 4000;
+    int n = 1000;
     int k = 1000;
     float alpha = 1.;
     float *a = rand_data(m, k);
     float *b = rand_data(k, n);
     float *c = (float*)calloc(m*n, sizeof(float));
+    float *c_col = (float*)calloc(m*n, sizeof(float));
+    float *c_gpu = (float*)calloc(m*n, sizeof(float));
 
+    int i;
     timing_for_gemm(gemm_nn, m, n, k, alpha, a, k, b, n, c, n);
-    timing_for_gemm(gemm_nn_col, m, n, k, alpha, a, k, b, n, c, n);
+    //timing_for_gemm(gemm_nn_col, m, n, k, alpha, a, k, b, n, c_col, n);
+
+    for(i=0; i<200; ++i){
+        timing_for_gemm(gemm_gpu_nn, m, n, k, alpha, a, k, b, n, c_gpu, n);
+    }
+    
+
+    //int j;
+    //for(i=0; i<m; ++i){
+    //    for(j=0; j<n; ++j){
+    //        int index = i * n + j;
+    //        printf("%f\t%f\n",c[index],c_gpu[index]);
+    //    }
+    //}
+    
     return 0;
 }
 
