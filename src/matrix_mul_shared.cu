@@ -21,6 +21,18 @@ __device__ mat get_sub_matrix(mat m, int row, int col){
     return sub_m;
 }
 
+__global__ void matrix_mul_kernel(mat a, mat b, mat c){
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    int i;
+    float cval = 0.;
+    for(i=0; i<a.width; ++i){
+        cval += a.data[row * a.width + i] * b.data[i * b.width + col];
+    }
+    set_element(c, row, col, cval);
+}
+
 __global__ void matrix_mul_s_kernel(mat a, mat b, mat c){
     int bx = blockIdx.x;
     int by = blockIdx.y;
@@ -81,11 +93,12 @@ void matrix_mul_s_called(mat A, mat B, mat C){
 
     cudaMemcpy(d_A->data, A.data, size_A, cudaMemcpyHostToDevice);
     cudaMemcpy(d_B->data, B.data, size_B, cudaMemcpyHostToDevice);
-    //cudaMemcpy(d_C->data, C.data, size_C, cudaMemcpyHostToDevice);
+
     dim3 blockSize(BLOCK_SIZE, BLOCK_SIZE);
     dim3 gridSize( (C.height + BLOCK_SIZE - 1) / BLOCK_SIZE,    (C.width + BLOCK_SIZE - 1) / BLOCK_SIZE);
 
-    matrix_mul_s_kernel<<<gridSize, blockSize>>>(*d_A, *d_B, *d_C);
+    //matrix_mul_s_kernel<<<gridSize, blockSize>>>(*d_A, *d_B, *d_C);
+    matrix_mul_kernel<<<gridSize, blockSize>>>(*d_A, *d_B, *d_C);
 
     cudaMemcpy(C.data, d_C->data, size_C, cudaMemcpyDeviceToHost);
     
