@@ -46,6 +46,12 @@ string.h
 load_data.h
 ../include/load_data.h
 
+../include/matrix_mul_shared.h
+stdio.h
+-
+stdlib.h
+-
+
 ../include/parse_utils.h
 list.h
 ../include/list.h
@@ -79,4 +85,6 @@ parse_utils.h
 /home/mrzs/Proj/part_darknet/test/parse_utils.h
 gemm.h
 /home/mrzs/Proj/part_darknet/test/gemm.h
+matrix_mul_shared.h
+/home/mrzs/Proj/part_darknet/test/matrix_mul_shared.h
 

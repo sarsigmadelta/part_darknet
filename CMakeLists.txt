@@ -39,7 +39,8 @@ add_library(lib_core_cxx SHARED src/load_data.cpp
 
 cuda_add_library(lib_core_cu SHARED src/matrix_mul.cu
 									src/im2col_gpu.cu
-									src/gemm.cu)
+									src/gemm.cu
+									src/matrix_mul_shared.cu)
 
 ADD_EXECUTABLE(demo "test/main.c")
 

@@ -7,6 +7,8 @@
 #include "matrix_mul.h"
 #include "parse_utils.h"
 #include "gemm.h"
+#include "matrix_mul_shared.h"
+
 // /home/jackliu/Proj/darknet_rep/assets/yolov2.cfg
 //trainImagePath
 
@@ -57,14 +59,14 @@ int main(){
     float *c_col = (float*)calloc(m*n, sizeof(float));
     float *c_gpu = (float*)calloc(m*n, sizeof(float));
 
-    int i;
-    timing_for_gemm(gemm_nn, m, n, k, alpha, a, k, b, n, c, n);
+    //int i;
+    //timing_for_gemm(gemm_nn, m, n, k, alpha, a, k, b, n, c, n);
     //timing_for_gemm(gemm_nn_col, m, n, k, alpha, a, k, b, n, c_col, n);
 
-    for(i=0; i<200; ++i){
-        timing_for_gemm(gemm_gpu_nn, m, n, k, alpha, a, k, b, n, c_gpu, n);
-    }
-    
+    //for(i=0; i<200; ++i){
+        //timing_for_gemm(gemm_gpu_nn, m, n, k, alpha, a, k, b, n, c_gpu, n);
+    //}
+    test_matrix_mul_s();    
 
     //int j;
     //for(i=0; i<m; ++i){
