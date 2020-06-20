@@ -3,7 +3,11 @@
 
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/convolution_layer.h
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/darknet.h
+CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/gemm.h
+CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/im2col.h
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/list.h
+CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/load_data.h
+CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../include/load_data_utils.h
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o: ../src/convolution_layer.c
 
 CMakeFiles/lib_core_cxx.dir/src/gemm.c.o: ../include/gemm.h
@@ -24,6 +28,7 @@ CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.o: ../src/load_data_utils.c
 
 CMakeFiles/lib_core_cxx.dir/src/parse_utils.c.o: ../src/parse_utils.c
 
+CMakeFiles/lib_core_cxx.dir/src/read_model.c.o: ../include/darknet.h
 CMakeFiles/lib_core_cxx.dir/src/read_model.c.o: ../include/list.h
 CMakeFiles/lib_core_cxx.dir/src/read_model.c.o: ../include/read_model.h
 CMakeFiles/lib_core_cxx.dir/src/read_model.c.o: ../src/read_model.c

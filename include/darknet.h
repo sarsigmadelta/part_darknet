@@ -30,22 +30,27 @@ struct layer{
     int outputs;
     int nweights;
 
-    float *input;
     float *output;
+    float *delta;
 
     float *weight;
-    float *bias;
+    float *weight_updates;
 
-    void (*forward_cpu)(struct layer, struct network);
-    void (*backward_cpu)(struct layer, struct network);
-    void (*forward_gpu)(struct layer, struct network);
-    void (*backward_gpu)(struct layer, struct network);
+    float *bias;
+    float *bias_updates;
+
+    void (*forward_convolution_cpu)(struct layer, struct network);
+    void (*backward_convolution_cpu)(struct layer, struct network);
+    void (*forward_convolution_gpu)(struct layer, struct network);
+    void (*backward_convolution_gpu)(struct layer, struct network);
 
 };
 
 struct network{
     layer *layers;
     float *input;
+    float *workspace;
+    void (*forward_net)(struct network);
 };
 
 

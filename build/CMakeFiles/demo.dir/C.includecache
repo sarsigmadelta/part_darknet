@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/darknet.h
+list.h
+../include/list.h
+
 ../include/gemm.h
 stdio.h
 -
@@ -65,6 +69,8 @@ stdio.h
 -
 string.h
 -
+darknet.h
+../include/darknet.h
 
 /home/mrzs/Proj/part_darknet/test/main.c
 list.h

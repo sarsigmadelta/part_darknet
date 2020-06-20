@@ -1,5 +1,5 @@
 #include "read_model.h"
-
+#include "darknet.h"
 
 
 char *read_line(FILE* fp){
@@ -73,3 +73,5 @@ list *read_cfg(char* file_path){
     }
     return options;
 }
+
+

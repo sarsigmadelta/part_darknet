@@ -2,6 +2,7 @@
     "files.associations": {
         "read_model.h": "c",
         "load_data_utils.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "darknet.h": "c"
     }
 }

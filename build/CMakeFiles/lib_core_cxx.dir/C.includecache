@@ -9,6 +9,10 @@
 ../include/convolution_layer.h
 darknet.h
 ../include/darknet.h
+im2col.h
+../include/im2col.h
+gemm.h
+../include/gemm.h
 
 ../include/darknet.h
 list.h
@@ -57,6 +61,8 @@ stdio.h
 -
 string.h
 -
+darknet.h
+../include/darknet.h
 
 /home/mrzs/Proj/part_darknet/src/convolution_layer.c
 convolution_layer.h
@@ -87,4 +93,6 @@ load_data_utils.h
 /home/mrzs/Proj/part_darknet/src/read_model.c
 read_model.h
 /home/mrzs/Proj/part_darknet/src/read_model.h
+darknet.h
+/home/mrzs/Proj/part_darknet/src/darknet.h
 
