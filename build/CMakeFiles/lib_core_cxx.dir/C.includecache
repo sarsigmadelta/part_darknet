@@ -54,6 +54,16 @@ stdio.h
 string.h
 -
 
+../include/network.h
+darknet.h
+../include/darknet.h
+
+../include/parse_utils.h
+list.h
+../include/list.h
+string.h
+-
+
 ../include/read_model.h
 list.h
 ../include/list.h
@@ -63,6 +73,8 @@ string.h
 -
 darknet.h
 ../include/darknet.h
+convolution_layer.h
+../include/convolution_layer.h
 
 /home/mrzs/Proj/part_darknet/src/convolution_layer.c
 convolution_layer.h
@@ -88,11 +100,19 @@ stdio.h
 load_data_utils.h
 /home/mrzs/Proj/part_darknet/src/load_data_utils.h
 
+/home/mrzs/Proj/part_darknet/src/network.c
+network.h
+/home/mrzs/Proj/part_darknet/src/network.h
+
 /home/mrzs/Proj/part_darknet/src/parse_utils.c
 
 /home/mrzs/Proj/part_darknet/src/read_model.c
 read_model.h
 /home/mrzs/Proj/part_darknet/src/read_model.h
-darknet.h
-/home/mrzs/Proj/part_darknet/src/darknet.h
+network.h
+/home/mrzs/Proj/part_darknet/src/network.h
+string.h
+/home/mrzs/Proj/part_darknet/src/string.h
+parse_utils.h
+/home/mrzs/Proj/part_darknet/src/parse_utils.h
 

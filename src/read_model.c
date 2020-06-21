@@ -1,6 +1,23 @@
 #include "read_model.h"
-#include "darknet.h"
+#include "network.h"
+#include "string.h"
+#include "parse_utils.h"
 
+convolution_layer parse_convolution_layer(size_param param, list *option){
+    convolution_layer l = {0};
+    int batch = param.batch;
+    int width = param.w;
+    int height = param.h;
+    int channels = param.c;
+    int filters = option_find_int(option, "filters");
+    int pad = option_find_int(option, "pad");
+    int stride = option_find_int(option, "stride");
+    int ksize = option_find_int(option, "size");
+
+    l = make_convolution_layer(batch, width, height, channels, ksize, filters, stride, pad);
+
+    return l;
+}
 
 char *read_line(FILE* fp){
     int len = 128;
@@ -72,6 +89,44 @@ list *read_cfg(char* file_path){
         }
     }
     return options;
+}
+
+network parse_network(char *filename){
+    list *options = read_cfg(filename);
+    network net = make_network(options->size - 1);
+    node* n = options->front;
+    list *net_param = ((section*)n->val)->option;
+    size_param params = {0};
+    params.batch = option_find_int(net_param, "batch");
+    params.c = option_find_int(net_param, "channels");
+    params.w = option_find_int(net_param, "width");
+    params.h = option_find_int(net_param, "height");
+
+    int idx_layer = 0;
+    size_t workspace = 0;
+    n = n->next;
+    while(n){
+        section *sec = (section*)n->val;
+        char *type = sec->type;
+        layer l = {0};
+        if(!strcmp(type, "[convolutional]")){
+            list *option = sec->option;
+            l = parse_convolution_layer(params, option);
+        }
+        n = n->next;
+        if(n){
+            params.c = l.out_c;
+            params.h = l.out_h;
+            params.w = l.out_w;
+        }
+        
+        workspace = workspace > l.workspace ? workspace : l.workspace;
+        printf("out size is %d\n", workspace);
+        net.layers[idx_layer] = l;
+        idx_layer += 1;
+    }
+
+    return net;
 }
 
 

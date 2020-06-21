@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+../include/convolution_layer.h
+darknet.h
+../include/darknet.h
+im2col.h
+../include/im2col.h
+gemm.h
+../include/gemm.h
+
 ../include/darknet.h
 list.h
 ../include/list.h
@@ -71,6 +79,8 @@ string.h
 -
 darknet.h
 ../include/darknet.h
+convolution_layer.h
+../include/convolution_layer.h
 
 /home/mrzs/Proj/part_darknet/test/main.c
 list.h

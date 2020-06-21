@@ -45,8 +45,9 @@ void *thread_func(void* ptr){
 
 int main(){
     char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2_tiny.cfg";
-    list *model = read_cfg(cfg_path);
-    show_model(model);
+    //list *model = read_cfg(cfg_path);
+    network net = parse_network(cfg_path);
+    //show_model(model);
 
     
     return 0;

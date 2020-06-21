@@ -38,7 +38,7 @@ convolution_layer make_convolution_layer(int batch, int w, int h, int c, int ksi
     l.output = (float*)calloc(l.batch * l.outputs, sizeof(float));
     l.bias = (float*)calloc(l.out_c, sizeof(float));
     l.bias_updates = (float*)calloc(l.out_c, sizeof(float));
-    
+    l.workspace = get_convolution_space(l);
 
     return l;
 }

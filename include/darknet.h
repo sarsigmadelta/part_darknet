@@ -39,6 +39,8 @@ struct layer{
     float *bias;
     float *bias_updates;
 
+    size_t workspace;
+
     void (*forward_convolution_cpu)(struct layer, struct network);
     void (*backward_convolution_cpu)(struct layer, struct network);
     void (*forward_convolution_gpu)(struct layer, struct network);
@@ -48,11 +50,20 @@ struct layer{
 
 struct network{
     layer *layers;
+    int inputs;
     float *input;
     float *workspace;
     void (*forward_net)(struct network);
 };
 
+typedef struct size_param{
+    int w;
+    int h;
+    int c;
+    int batch;
+    network *net;
+    int outputs;
+}size_param;
 
 
 #endif

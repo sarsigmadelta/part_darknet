@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lib_core_cxx.dir/src/read_model.c.o"
   "CMakeFiles/lib_core_cxx.dir/src/parse_utils.c.o"
   "CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o"
+  "CMakeFiles/lib_core_cxx.dir/src/network.c.o"
   "CMakeFiles/lib_core_cxx.dir/src/gemm.c.o"
   "liblib_core_cxx.pdb"
   "liblib_core_cxx.so"

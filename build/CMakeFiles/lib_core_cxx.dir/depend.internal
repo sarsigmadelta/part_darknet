@@ -26,11 +26,23 @@ CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.o
  ../include/list.h
  ../include/load_data_utils.h
  /home/mrzs/Proj/part_darknet/src/load_data_utils.c
+CMakeFiles/lib_core_cxx.dir/src/network.c.o
+ ../include/darknet.h
+ ../include/list.h
+ ../include/network.h
+ /home/mrzs/Proj/part_darknet/src/network.c
 CMakeFiles/lib_core_cxx.dir/src/parse_utils.c.o
  /home/mrzs/Proj/part_darknet/src/parse_utils.c
 CMakeFiles/lib_core_cxx.dir/src/read_model.c.o
+ ../include/convolution_layer.h
  ../include/darknet.h
+ ../include/gemm.h
+ ../include/im2col.h
  ../include/list.h
+ ../include/load_data.h
+ ../include/load_data_utils.h
+ ../include/network.h
+ ../include/parse_utils.h
  ../include/read_model.h
  /home/mrzs/Proj/part_darknet/src/read_model.c
 CMakeFiles/lib_core_cxx.dir/src/load_data.cpp.o

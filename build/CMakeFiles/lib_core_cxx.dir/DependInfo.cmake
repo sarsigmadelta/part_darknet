@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/mrzs/Proj/part_darknet/src/im2col.c" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/im2col.c.o"
   "/home/mrzs/Proj/part_darknet/src/list.c" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/list.c.o"
   "/home/mrzs/Proj/part_darknet/src/load_data_utils.c" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.o"
+  "/home/mrzs/Proj/part_darknet/src/network.c" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/network.c.o"
   "/home/mrzs/Proj/part_darknet/src/parse_utils.c" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/parse_utils.c.o"
   "/home/mrzs/Proj/part_darknet/src/read_model.c" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/read_model.c.o"
   )

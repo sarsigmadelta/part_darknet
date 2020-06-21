@@ -311,6 +311,33 @@ src/load_data_utils.c.s:
 	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.s
 .PHONY : src/load_data_utils.c.s
 
+src/network.o: src/network.c.o
+
+.PHONY : src/network.o
+
+# target to build an object file
+src/network.c.o:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/network.c.o
+.PHONY : src/network.c.o
+
+src/network.i: src/network.c.i
+
+.PHONY : src/network.i
+
+# target to preprocess a source file
+src/network.c.i:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/network.c.i
+.PHONY : src/network.c.i
+
+src/network.s: src/network.c.s
+
+.PHONY : src/network.s
+
+# target to generate assembly for a file
+src/network.c.s:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/network.c.s
+.PHONY : src/network.c.s
+
 src/parse_utils.o: src/parse_utils.c.o
 
 .PHONY : src/parse_utils.o
@@ -421,6 +448,9 @@ help:
 	@echo "... src/load_data_utils.o"
 	@echo "... src/load_data_utils.i"
 	@echo "... src/load_data_utils.s"
+	@echo "... src/network.o"
+	@echo "... src/network.i"
+	@echo "... src/network.s"
 	@echo "... src/parse_utils.o"
 	@echo "... src/parse_utils.i"
 	@echo "... src/parse_utils.s"
