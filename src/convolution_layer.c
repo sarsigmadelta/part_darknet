@@ -32,12 +32,17 @@ convolution_layer make_convolution_layer(int batch, int w, int h, int c, int ksi
 
     l.nweights = (l.ksize * l.ksize * l.c) * l.out_c;
     l.weight = (float*)calloc(l.nweights, sizeof(float));
+    int i;
+    for(i=0; i<l.nweights; ++i){
+        l.weight[i] = 1.;
+    }
     l.weight_updates = (float*)calloc(l.nweights, sizeof(float));
 
     l.outputs = l.out_c * l.out_h * l.out_w;
     l.output = (float*)calloc(l.batch * l.outputs, sizeof(float));
     l.bias = (float*)calloc(l.out_c, sizeof(float));
     l.bias_updates = (float*)calloc(l.out_c, sizeof(float));
+    l.forward_cpu = forward_convolution_cpu;
     l.workspace = get_convolution_space(l);
 
     return l;

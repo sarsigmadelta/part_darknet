@@ -43,12 +43,23 @@ void *thread_func(void* ptr){
     return 0;
 }
 
+float *get_random_data(int w, int h, int c){
+    float *data = (float*)calloc(w*h*c, sizeof(float));
+    int i;
+    for(i=0; i<w*h*c; ++i){
+        data[i] = rand()%1000/1000.;
+    }
+    return data;
+}
+
 int main(){
     char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2_tiny.cfg";
-    //list *model = read_cfg(cfg_path);
     network net = parse_network(cfg_path);
-    //show_model(model);
-
+    net.input = get_random_data(608,608,3);
+    int i;
+    for(i=0; i<608*608*3; ++i){
+        printf("%f\n", net.input[i]);
+    }
     
     return 0;
 }

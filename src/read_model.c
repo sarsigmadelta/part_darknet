@@ -121,10 +121,10 @@ network parse_network(char *filename){
         }
         
         workspace = workspace > l.workspace ? workspace : l.workspace;
-        printf("out size is %d\n", workspace);
         net.layers[idx_layer] = l;
         idx_layer += 1;
     }
+    net.output = net.layers[idx_layer-1].output;
 
     return net;
 }

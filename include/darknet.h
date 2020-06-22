@@ -41,10 +41,10 @@ struct layer{
 
     size_t workspace;
 
-    void (*forward_convolution_cpu)(struct layer, struct network);
-    void (*backward_convolution_cpu)(struct layer, struct network);
-    void (*forward_convolution_gpu)(struct layer, struct network);
-    void (*backward_convolution_gpu)(struct layer, struct network);
+    void (*forward_cpu)(struct layer, struct network);
+    void (*backward_cpu)(struct layer, struct network);
+    void (*forward_gpu)(struct layer, struct network);
+    void (*backward_gpu)(struct layer, struct network);
 
 };
 
@@ -53,7 +53,9 @@ struct network{
     int inputs;
     float *input;
     float *workspace;
+    float *output;
     void (*forward_net)(struct network);
+    int n;
 };
 
 typedef struct size_param{
