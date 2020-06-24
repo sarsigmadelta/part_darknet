@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/col2im.h
+
 ../include/convolution_layer.h
 darknet.h
 ../include/darknet.h
@@ -17,6 +19,8 @@ gemm.h
 ../include/darknet.h
 list.h
 ../include/list.h
+stdio.h
+-
 
 ../include/gemm.h
 stdio.h
@@ -33,6 +37,8 @@ stdlib.h
 -
 load_data.h
 ../include/load_data.h
+col2im.h
+../include/col2im.h
 
 ../include/list.h
 stdlib.h
@@ -75,6 +81,10 @@ darknet.h
 ../include/darknet.h
 convolution_layer.h
 ../include/convolution_layer.h
+
+/home/mrzs/Proj/part_darknet/src/col2im.c
+col2im.h
+/home/mrzs/Proj/part_darknet/src/col2im.h
 
 /home/mrzs/Proj/part_darknet/src/convolution_layer.c
 convolution_layer.h

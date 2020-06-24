@@ -5,8 +5,6 @@ int cal_out_h(int h, int ksize, int stride, int pad){
     return (h + 2 * pad - ksize) / stride + 1;
 }
 
-
-
 int cal_out_w(int w, int ksize, int stride, int pad){
     return (w + 2 * pad - ksize) / stride + 1;
 }
@@ -52,7 +50,6 @@ void forward_convolution_cpu(layer l, network net){
     int m = l.out_c;
     int k = l.ksize * l.ksize * l.c;
     int n = l.out_h * l.out_w;
-    
     int i;
     for(i=0; i<l.batch; ++i){
         float *a = l.weight;
@@ -66,5 +63,9 @@ void forward_convolution_cpu(layer l, network net){
         }
         gemm_nn(m, n, k, 1., a, k, b, n, c, n);
     }
+    
+}
+
+void backward_convolution_cpu(layer l, network net){
     
 }

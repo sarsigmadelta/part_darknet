@@ -102,6 +102,12 @@ network parse_network(char *filename){
     params.w = option_find_int(net_param, "width");
     params.h = option_find_int(net_param, "height");
 
+    net.width = params.w;
+    net.height = params.h;
+    net.channels = params.c;
+    net.batch = params.batch;
+    net.inputs = net.batch * net.height * net.width * net.channels;
+
     int idx_layer = 0;
     size_t workspace = 0;
     n = n->next;
@@ -124,7 +130,11 @@ network parse_network(char *filename){
         net.layers[idx_layer] = l;
         idx_layer += 1;
     }
+    net.n = idx_layer;
+    net.outputs = net.layers[idx_layer-1].outputs * net.batch;
     net.output = net.layers[idx_layer-1].output;
+    net.input = (float*)calloc(net.inputs, sizeof(float));
+    net.workspace = (float*)malloc(workspace);
 
     return net;
 }

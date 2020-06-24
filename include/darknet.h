@@ -2,7 +2,7 @@
 #define DARKNET_H
 
 #include "list.h"
-
+#include <stdio.h>
 
 struct layer;
 typedef struct layer layer;
@@ -54,7 +54,12 @@ struct network{
     float *input;
     float *workspace;
     float *output;
-    void (*forward_net)(struct network);
+    int outputs;
+    void (*forward_network)(struct network);
+    int width;
+    int height;
+    int channels;
+    int batch;
     int n;
 };
 

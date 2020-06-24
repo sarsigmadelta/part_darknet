@@ -10,6 +10,16 @@ void gemm_nn(int m, int n, int k, float alpha,
 			 float *b, int lb, 
 			 float *c, int lc);
 
+void gemm_nt(int m, int n, int k, float alpha, 
+			 float* a, int la, 
+			 float *b, int lb, 
+			 float *c, int lc);
+
+void gemm_tn(int m, int n, int k, float alpha, 
+			 float* a, int la, 
+			 float *b, int lb, 
+			 float *c, int lc);
+
 void gemm_nn_col(int m, int n, int k, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 

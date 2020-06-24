@@ -8,6 +8,7 @@
 #include "parse_utils.h"
 #include "gemm.h"
 #include "matrix_mul_shared.h"
+#include "network.h"
 
 void show_options(list *l){
     int size = l->size;
@@ -56,10 +57,13 @@ int main(){
     char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2_tiny.cfg";
     network net = parse_network(cfg_path);
     net.input = get_random_data(608,608,3);
-    int i;
-    for(i=0; i<608*608*3; ++i){
-        printf("%f\n", net.input[i]);
-    }
+    forward_network(&net);
+    //int i;
+    //for(i=0; i<net.outputs; ++i){
+    //    printf("%f\n", net.output[i]);
+    //}
+    image im = gen_random_image_test(3,5,5);
+    show_im2col_result(im, 3, 2, 0);
     
     return 0;
 }

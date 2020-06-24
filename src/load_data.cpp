@@ -121,7 +121,6 @@ pthread_t load_data(load_args args){
     return thread;
 }
 
-
 matrix concat_matrix(matrix m1, matrix m2){
     matrix m = {0};
     m.rows = m1.rows + m2.rows;
