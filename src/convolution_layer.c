@@ -63,9 +63,39 @@ void forward_convolution_cpu(layer l, network net){
         }
         gemm_nn(m, n, k, 1., a, k, b, n, c, n);
     }
-    
 }
 
 void backward_convolution_cpu(layer l, network net){
-    
+    int m = l.out_c;
+    int n = l.ksize * l.ksize * l.c;
+    int k = l.out_h * l.out_w;
+
+    int i;
+    for(i=0; i<l.batch; ++i){
+        float *a = l.delta + i * l.outputs;
+        float *b = net.workspace;
+        float *c = l.weight_updates;
+
+        float *im = net.input + i * l.w * l.h * l.c;
+        float *imd = net.delta + i * l.w * l.h * l.c;
+
+        if(l.batch==1){
+            b = im;
+        }else{
+            im2col(im, l.c, l.h, l.w, l.ksize, l.stride, l.pad, b);
+        }
+        gemm_nt(m, n, k, 1., a, k, b, k, c, n);
+        if(l.delta){
+            float *a = l.weight;
+            float *b = l.delta + + i * l.outputs;
+            float *c = net.workspace;
+
+            gemm_tn(n, k, m, 1., a, n, b, k, c, k);
+            col2im(c, l.c, l.h, l.w, l.ksize, l.stride, l.pad, imd);
+        }
+        
+
+
+        
+    }
 }

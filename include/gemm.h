@@ -5,17 +5,17 @@
 #include <stdlib.h>
 #include <ctime>
 
-void gemm_nn(int m, int n, int k, float alpha, 
+void gemm_nn(int M, int N, int K, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 
 			 float *c, int lc);
 
-void gemm_nt(int m, int n, int k, float alpha, 
+void gemm_nt(int M, int N, int K, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 
 			 float *c, int lc);
 
-void gemm_tn(int m, int n, int k, float alpha, 
+void gemm_tn(int M, int N, int K, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 
 			 float *c, int lc);

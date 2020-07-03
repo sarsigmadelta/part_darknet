@@ -68,7 +68,7 @@ void show_im2col_result(image im, int ksize, int stride, int pad){
             im.channels, im.height, im.width,
             ksize, stride, pad, data_col);
     
-/*    printf("after im2col....\n");
+    printf("after im2col....\n");
 
     int i, j;
     for(i=0; i<channels_cols; ++i){
@@ -78,7 +78,7 @@ void show_im2col_result(image im, int ksize, int stride, int pad){
         }
         printf("\n");
     }
-*/
+
     col2im(data_col, im.channels, im.height, im.width, ksize, stride, pad, im_cpy.data);
 
     printf("after col2im again....\n");

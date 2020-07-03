@@ -54,6 +54,7 @@ struct network{
     float *input;
     float *workspace;
     float *output;
+    float *delta;
     int outputs;
     void (*forward_network)(struct network);
     int width;

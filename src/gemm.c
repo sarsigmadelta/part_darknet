@@ -1,34 +1,47 @@
 #include "gemm.h"
 
-
-void gemm_nn(int m, int n, int k, float alpha, 
+void gemm_nn(int M, int N, int K, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 
 			 float *c, int lc){
-
-    int i,j,w;
-    for(i=0; i<m; ++i){
-        for(j=0; j<k; ++j){
-            float a_elemet = alpha * a[i * la + j];
-            for(w=0; w<n; ++w){
-                c[i * lc + w] += a_elemet * b[j * lb + w];
+    int i,j,k;
+    for(i=0; i<M; ++i){
+        for(k=0; k<K; ++k){
+            float a_t = alpha * a[i*la + k];
+            for(j=0; j<N; ++j){
+                c[i*lc + j] += a_t * b[k * lb + j];
             }
         }
     }
 }
 
-void gemm_nt(int m, int n, int k, float alpha, 
+void gemm_nt(int M, int N, int K, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 
 			 float *c, int lc){
-    
+    int i,j,k;
+    for(i=0; i<M; ++i){
+        for(j=0; j<N; ++j){
+            for(k=0; k<K; ++k){
+                c[i*lc + j] += alpha * a[i*lc + k] + b[j*lb + k];
+            }
+        }
+    }
 }
 
-void gemm_tn(int m, int n, int k, float alpha, 
+void gemm_tn(int M, int N, int K, float alpha, 
 			 float* a, int la, 
 			 float *b, int lb, 
 			 float *c, int lc){
-    
+    int i,j,k;
+    for(i=0; i<M; ++i){
+        for(k=0; k<K; ++k){
+            float a_t = a[k*la + i];
+            for(j=0; j<N; ++j){
+                c[i*lc + j] += a_t * b[k * lb + j];
+            }
+        }
+    }
 }
 
 void gemm_nn_col(int m, int n, int k, float alpha, 
