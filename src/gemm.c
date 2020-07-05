@@ -7,9 +7,9 @@ void gemm_nn(int M, int N, int K, float alpha,
     int i,j,k;
     for(i=0; i<M; ++i){
         for(k=0; k<K; ++k){
-            float a_t = alpha * a[i*la + k];
+            float a_t = a[i*la + k] * alpha;
             for(j=0; j<N; ++j){
-                c[i*lc + j] += a_t * b[k * lb + j];
+                c[i*lc + j] += a_t * b[k*lb + j];
             }
         }
     }
@@ -22,9 +22,11 @@ void gemm_nt(int M, int N, int K, float alpha,
     int i,j,k;
     for(i=0; i<M; ++i){
         for(j=0; j<N; ++j){
+            float sum_ = 0.;
             for(k=0; k<K; ++k){
-                c[i*lc + j] += alpha * a[i*lc + k] + b[j*lb + k];
+                sum_ += alpha * a[i*la + k] * b[j*lb + k];
             }
+            c[i*lc + j] += sum_;
         }
     }
 }
@@ -36,9 +38,9 @@ void gemm_tn(int M, int N, int K, float alpha,
     int i,j,k;
     for(i=0; i<M; ++i){
         for(k=0; k<K; ++k){
-            float a_t = a[k*la + i];
+            float a_t = alpha * a[k*la + i];
             for(j=0; j<N; ++j){
-                c[i*lc + j] += a_t * b[k * lb + j];
+                c[i*lc + j] += a_t * b[k*lb + j];
             }
         }
     }
