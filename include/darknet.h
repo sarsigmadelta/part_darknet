@@ -10,6 +10,9 @@ typedef struct layer layer;
 struct network;
 typedef struct network network;
 
+struct update_param;
+typedef struct update_param update_param;
+
 struct layer{
 
     int w;
@@ -43,6 +46,8 @@ struct layer{
 
     void (*forward_cpu)(struct layer, struct network);
     void (*backward_cpu)(struct layer, struct network);
+    void (*update_cpu)(struct layer, struct update_param);
+
     void (*forward_gpu)(struct layer, struct network);
     void (*backward_gpu)(struct layer, struct network);
 
@@ -55,6 +60,7 @@ struct network{
     float *workspace;
     float *output;
     float *delta;
+    float learning_rate;
     int outputs;
     void (*forward_network)(struct network);
     int width;
@@ -71,7 +77,12 @@ typedef struct size_param{
     int batch;
     network *net;
     int outputs;
+    float learning_rate;
 }size_param;
+
+struct update_param{
+    float learning_rate;
+};
 
 
 #endif

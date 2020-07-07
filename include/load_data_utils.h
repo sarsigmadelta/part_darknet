@@ -11,4 +11,6 @@ list *parse_pathes(char* file_path);
 
 char** paths_to_array(list *l);
 
+void axy_cpu(int N, float ALPHA, float *x, int INCX, float *y, int INCY);
+
 #endif

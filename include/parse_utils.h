@@ -30,6 +30,18 @@ int option_find_int(list *l, char *key){
     return 0;
 }
 
+float option_find_float(list *l, char *key){
+    node *n = l->front;
+    while(n){
+        kvp *k = (kvp*)n->val;
+        if(!strcmp(k->key, key)){
+            k->used = 1;
+            return atof(k->val);
+        }
+        n = n->next;
+    }
+    return 0.;
+}
 
 
 

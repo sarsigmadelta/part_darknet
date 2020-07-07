@@ -25,3 +25,10 @@ char** paths_to_array(list *l){
     return pathes;
 }
 
+void axy_cpu(int N, float ALPHA, float *x, int INCX, float *y, int INCY){
+    int i;
+    for(i=0; i<N; ++i){
+        x[i*INCX] += y[i*INCY] * ALPHA;
+    }
+}
+

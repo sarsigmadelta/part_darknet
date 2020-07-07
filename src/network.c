@@ -30,3 +30,14 @@ void backward_network(network *netp){
         l.backward_cpu(l, *net);
     }
 }
+
+void update_network(network *netp){
+    update_param a = {0};
+    a.learning_rate = netp->learning_rate;
+    int i;
+    int n = netp->n;
+    for(i=0; i<n; ++i){
+        layer l = netp->layers[i];
+        l.update_cpu(l, a);
+    }
+}

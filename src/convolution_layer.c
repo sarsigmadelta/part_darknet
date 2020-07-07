@@ -43,6 +43,7 @@ convolution_layer make_convolution_layer(int batch, int w, int h, int c, int ksi
     l.bias_updates = (float*)calloc(l.out_c, sizeof(float));
     l.forward_cpu = forward_convolution_cpu;
     l.backward_cpu = backward_convolution_cpu;
+    l.update_cpu = update_convolution_cpu;
     l.workspace = get_convolution_space(l);
 
     return l;
@@ -99,4 +100,10 @@ void backward_convolution_cpu(layer l, network net){
         }
         
     }
+}
+
+void update_convolution_cpu(layer l, update_param a){
+    float learning_rate = a.learning_rate;
+    axy_cpu(l.nweights, learning_rate, l.weight_updates, 1, l.weight, 1);
+    axy_cpu(l.out_c, learning_rate, l.bias_updates, 1, l.bias, 1);
 }

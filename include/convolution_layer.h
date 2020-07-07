@@ -16,5 +16,6 @@ convolution_layer make_convolution_layer(int batch, int w, int h, int c, int ksi
 
 void forward_convolution_cpu(layer l, network net);
 void backward_convolution_cpu(layer l, network net);
+void update_convolution_cpu(layer l, update_param a);
 
 #endif

@@ -68,9 +68,12 @@ int main(){
     char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2_tiny.cfg";
     network net = parse_network(cfg_path);
     net.input = get_random_data(608,608,3);
+
+    
     forward_network(&net);
     gen_random_delta(&net);
     backward_network(&net);
+    update_network(&net);
 
     printf("net.ouput[-1] is %f\n", net.layers[net.n-1].output[net.layers[net.n-1].outputs-1]);
     printf("net.delta[-1] is %f\n", net.layers[0].delta[net.layers[0].outputs-1]);

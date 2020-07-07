@@ -101,11 +101,13 @@ network parse_network(char *filename){
     params.c = option_find_int(net_param, "channels");
     params.w = option_find_int(net_param, "width");
     params.h = option_find_int(net_param, "height");
+    params.learning_rate = option_find_float(net_param, "learning_rate");
 
     net.width = params.w;
     net.height = params.h;
     net.channels = params.c;
     net.batch = params.batch;
+    net.learning_rate = params.learning_rate;
     net.inputs = net.batch * net.height * net.width * net.channels;
 
     int idx_layer = 0;
