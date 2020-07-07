@@ -57,7 +57,6 @@ void gen_random_delta(network* net){
     int n = net->n;
     layer l = net->layers[n-1];
     l.delta = (float*)calloc(l.outputs, sizeof(float));
-    printf("l.outputs is %d\n", l.outputs);
     int i;
     for(i=0; i<l.outputs; ++i){
         l.delta[i] = (float)(rand() % 10000) / 10000.;
@@ -72,6 +71,9 @@ int main(){
     forward_network(&net);
     gen_random_delta(&net);
     backward_network(&net);
+
+    printf("net.ouput[-1] is %f\n", net.layers[net.n-1].output[net.layers[net.n-1].outputs-1]);
+    printf("net.delta[-1] is %f\n", net.layers[0].delta[net.layers[0].outputs-1]);
 
     //image im = gen_random_image_test(3,5,5);
     //show_im2col_result(im, 3, 2, 0);

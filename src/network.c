@@ -27,7 +27,6 @@ void backward_network(network *netp){
         layer prev = net->layers[i-1];
         net->input = prev.output;
         net->delta = prev.delta;
-        printf("idx is %d\n", i);
         l.backward_cpu(l, *net);
     }
 }

@@ -82,18 +82,12 @@ void backward_convolution_cpu(layer l, network net){
         float *im = net.input + i * l.w * l.h * l.c;
         float *imd = net.delta + i * l.w * l.h * l.c;
 
-        if(l.batch==1){
+        if(l.ksize==1){
             b = im;
         }else{
             im2col(im, l.c, l.h, l.w, l.ksize, l.stride, l.pad, b);
         }
-        printf("step in backward$$$$$$$$$$\n");
-        printf("m=%d\tn=%d\tk=%d\n",m,n,k);
-        printf("c[1000] is %f\n", c[m*n - 1]);
-        printf("b[1000] is %f\n", b[n*k - 1]);
-        printf("a[1000] is %f\n", a[m*k -1]);
         gemm_nt(m, n, k, 1., a, k, b, k, c, n);
-        printf("step in backward\n");
         
         if(l.delta){
             float *a = l.weight;
@@ -101,8 +95,6 @@ void backward_convolution_cpu(layer l, network net){
             float *c = net.workspace;
 
             gemm_tn(n, k, m, 1., a, n, b, k, c, k);
-            printf("step in backward....\n");
-            printf("imd[1000] is %f\n", imd[1000]);
             col2im(c, l.c, l.h, l.w, l.ksize, l.stride, l.pad, imd);
         }
         
