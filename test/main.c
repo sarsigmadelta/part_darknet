@@ -53,17 +53,28 @@ float *get_random_data(int w, int h, int c){
     return data;
 }
 
+void gen_random_delta(network* net){
+    int n = net->n;
+    layer l = net->layers[n-1];
+    l.delta = (float*)calloc(l.outputs, sizeof(float));
+    printf("l.outputs is %d\n", l.outputs);
+    int i;
+    for(i=0; i<l.outputs; ++i){
+        l.delta[i] = (float)(rand() % 10000) / 10000.;
+    }
+    net->layers[n-1].delta = l.delta;
+}
+
 int main(){
     char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2_tiny.cfg";
     network net = parse_network(cfg_path);
     net.input = get_random_data(608,608,3);
     forward_network(&net);
-    //int i;
-    //for(i=0; i<net.outputs; ++i){
-    //    printf("%f\n", net.output[i]);
-    //}
-    image im = gen_random_image_test(3,5,5);
-    show_im2col_result(im, 3, 2, 0);
+    gen_random_delta(&net);
+    backward_network(&net);
+
+    //image im = gen_random_image_test(3,5,5);
+    //show_im2col_result(im, 3, 2, 0);
     
     return 0;
 }

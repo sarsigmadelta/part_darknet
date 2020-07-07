@@ -38,9 +38,11 @@ convolution_layer make_convolution_layer(int batch, int w, int h, int c, int ksi
 
     l.outputs = l.out_c * l.out_h * l.out_w;
     l.output = (float*)calloc(l.batch * l.outputs, sizeof(float));
+    l.delta = (float*)calloc(l.batch * l.outputs, sizeof(float));
     l.bias = (float*)calloc(l.out_c, sizeof(float));
     l.bias_updates = (float*)calloc(l.out_c, sizeof(float));
     l.forward_cpu = forward_convolution_cpu;
+    l.backward_cpu = backward_convolution_cpu;
     l.workspace = get_convolution_space(l);
 
     return l;
@@ -71,6 +73,7 @@ void backward_convolution_cpu(layer l, network net){
     int k = l.out_h * l.out_w;
 
     int i;
+    
     for(i=0; i<l.batch; ++i){
         float *a = l.delta + i * l.outputs;
         float *b = net.workspace;
@@ -84,18 +87,24 @@ void backward_convolution_cpu(layer l, network net){
         }else{
             im2col(im, l.c, l.h, l.w, l.ksize, l.stride, l.pad, b);
         }
+        printf("step in backward$$$$$$$$$$\n");
+        printf("m=%d\tn=%d\tk=%d\n",m,n,k);
+        printf("c[1000] is %f\n", c[m*n - 1]);
+        printf("b[1000] is %f\n", b[n*k - 1]);
+        printf("a[1000] is %f\n", a[m*k -1]);
         gemm_nt(m, n, k, 1., a, k, b, k, c, n);
+        printf("step in backward\n");
+        
         if(l.delta){
             float *a = l.weight;
             float *b = l.delta + + i * l.outputs;
             float *c = net.workspace;
 
             gemm_tn(n, k, m, 1., a, n, b, k, c, k);
+            printf("step in backward....\n");
+            printf("imd[1000] is %f\n", imd[1000]);
             col2im(c, l.c, l.h, l.w, l.ksize, l.stride, l.pad, imd);
         }
-        
-
-
         
     }
 }
