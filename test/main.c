@@ -69,17 +69,17 @@ int main(){
     network net = parse_network(cfg_path);
     net.input = get_random_data(608,608,3);
 
-    
-    forward_network(&net);
-    gen_random_delta(&net);
-    backward_network(&net);
-    update_network(&net);
+    int i;
+    for(i=0; i<3; ++i){
+        forward_network(&net);
+        gen_random_delta(&net);
+        backward_network(&net);
+        update_network(&net);
+    }
 
     printf("net.ouput[-1] is %f\n", net.layers[net.n-1].output[net.layers[net.n-1].outputs-1]);
     printf("net.delta[-1] is %f\n", net.layers[0].delta[net.layers[0].outputs-1]);
 
-    //image im = gen_random_image_test(3,5,5);
-    //show_im2col_result(im, 3, 2, 0);
     
     return 0;
 }

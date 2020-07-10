@@ -30,6 +30,14 @@ stdlib.h
 ctime
 -
 
+../include/global_avg.h
+darknet.h
+../include/darknet.h
+im2col.h
+../include/im2col.h
+gemm.h
+../include/gemm.h
+
 ../include/im2col.h
 stdio.h
 -
@@ -81,6 +89,8 @@ darknet.h
 ../include/darknet.h
 convolution_layer.h
 ../include/convolution_layer.h
+global_avg.h
+../include/global_avg.h
 
 /home/mrzs/Proj/part_darknet/src/col2im.c
 col2im.h
@@ -93,6 +103,10 @@ convolution_layer.h
 /home/mrzs/Proj/part_darknet/src/gemm.c
 gemm.h
 /home/mrzs/Proj/part_darknet/src/gemm.h
+
+/home/mrzs/Proj/part_darknet/src/global_avg.c
+global_avg.h
+/home/mrzs/Proj/part_darknet/src/global_avg.h
 
 /home/mrzs/Proj/part_darknet/src/im2col.c
 im2col.h

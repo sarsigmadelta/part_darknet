@@ -19,6 +19,17 @@ convolution_layer parse_convolution_layer(size_param param, list *option){
     return l;
 }
 
+global_avg_layer parse_global_avg_layer(size_param param, list *option){
+    global_avg_layer l = {0};
+    int batch = param.batch;
+    int width = param.w;
+    int height = param.h;
+    int channels = param.c;
+
+    l = make_global_avg(batch, width, height, channels);
+    return l;
+}
+
 char *read_line(FILE* fp){
     int len = 128;
     char *line = (char*)calloc(len, sizeof(char));
@@ -120,6 +131,9 @@ network parse_network(char *filename){
         if(!strcmp(type, "[convolutional]")){
             list *option = sec->option;
             l = parse_convolution_layer(params, option);
+        }else if(!strcmp(type, "[global_avg]")){
+            list *option = sec->option;
+            l = parse_global_avg_layer(params, option);
         }
         n = n->next;
         if(n){

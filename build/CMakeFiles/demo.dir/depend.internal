@@ -6,6 +6,7 @@ CMakeFiles/demo.dir/test/main.c.o
  ../include/convolution_layer.h
  ../include/darknet.h
  ../include/gemm.h
+ ../include/global_avg.h
  ../include/im2col.h
  ../include/list.h
  ../include/load_data.h

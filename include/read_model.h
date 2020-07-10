@@ -6,6 +6,7 @@
 #include <string.h>
 #include "darknet.h"
 #include "convolution_layer.h"
+#include "global_avg.h"
 
 char *read_line(FILE* fp);
 

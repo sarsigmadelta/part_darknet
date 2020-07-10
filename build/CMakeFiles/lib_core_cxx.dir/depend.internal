@@ -17,6 +17,16 @@ CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o
 CMakeFiles/lib_core_cxx.dir/src/gemm.c.o
  ../include/gemm.h
  /home/mrzs/Proj/part_darknet/src/gemm.c
+CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o
+ ../include/col2im.h
+ ../include/darknet.h
+ ../include/gemm.h
+ ../include/global_avg.h
+ ../include/im2col.h
+ ../include/list.h
+ ../include/load_data.h
+ ../include/load_data_utils.h
+ /home/mrzs/Proj/part_darknet/src/global_avg.c
 CMakeFiles/lib_core_cxx.dir/src/im2col.c.o
  ../include/col2im.h
  ../include/im2col.h
@@ -43,6 +53,7 @@ CMakeFiles/lib_core_cxx.dir/src/read_model.c.o
  ../include/convolution_layer.h
  ../include/darknet.h
  ../include/gemm.h
+ ../include/global_avg.h
  ../include/im2col.h
  ../include/list.h
  ../include/load_data.h

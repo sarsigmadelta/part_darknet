@@ -37,6 +37,7 @@ add_library(lib_core_cxx SHARED src/load_data.cpp
 									 src/convolution_layer.c
 									 src/network.c
 									 src/gemm.c
+									 src/global_avg.c
 									 src/col2im.c)
 
 cuda_add_library(lib_core_cu SHARED src/matrix_mul.cu

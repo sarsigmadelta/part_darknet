@@ -46,7 +46,7 @@ image gen_random_image_test(int channels, int height, int width){
         for(h=0; h<height; ++h){
             for(w=0; w<width; ++w){
                 int index = c*im.width*im.height + h*im.width + w;
-                im.data[index] = rand()%1000 / 1000. ;
+                im.data[index] = (float)(rand()%100000) / 100000. ;
             }
         }
     }

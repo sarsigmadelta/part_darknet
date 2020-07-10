@@ -5,6 +5,7 @@ CMakeFiles/demo.dir/test/main.c.o: ../include/col2im.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/convolution_layer.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/darknet.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/gemm.h
+CMakeFiles/demo.dir/test/main.c.o: ../include/global_avg.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/im2col.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/list.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/load_data.h

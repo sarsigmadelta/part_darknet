@@ -3,6 +3,7 @@
         "read_model.h": "c",
         "load_data_utils.h": "c",
         "string.h": "c",
-        "darknet.h": "c"
+        "darknet.h": "c",
+        "global_avg.h": "c"
     }
 }

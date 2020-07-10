@@ -230,6 +230,33 @@ src/gemm.c.s:
 	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/gemm.c.s
 .PHONY : src/gemm.c.s
 
+src/global_avg.o: src/global_avg.c.o
+
+.PHONY : src/global_avg.o
+
+# target to build an object file
+src/global_avg.c.o:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o
+.PHONY : src/global_avg.c.o
+
+src/global_avg.i: src/global_avg.c.i
+
+.PHONY : src/global_avg.i
+
+# target to preprocess a source file
+src/global_avg.c.i:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/global_avg.c.i
+.PHONY : src/global_avg.c.i
+
+src/global_avg.s: src/global_avg.c.s
+
+.PHONY : src/global_avg.s
+
+# target to generate assembly for a file
+src/global_avg.c.s:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/global_avg.c.s
+.PHONY : src/global_avg.c.s
+
 src/im2col.o: src/im2col.c.o
 
 .PHONY : src/im2col.o
@@ -466,6 +493,9 @@ help:
 	@echo "... src/gemm.o"
 	@echo "... src/gemm.i"
 	@echo "... src/gemm.s"
+	@echo "... src/global_avg.o"
+	@echo "... src/global_avg.i"
+	@echo "... src/global_avg.s"
 	@echo "... src/im2col.o"
 	@echo "... src/im2col.i"
 	@echo "... src/im2col.s"

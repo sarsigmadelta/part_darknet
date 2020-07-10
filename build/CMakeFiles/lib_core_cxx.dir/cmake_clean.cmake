@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o"
   "CMakeFiles/lib_core_cxx.dir/src/network.c.o"
   "CMakeFiles/lib_core_cxx.dir/src/gemm.c.o"
+  "CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o"
   "CMakeFiles/lib_core_cxx.dir/src/col2im.c.o"
   "liblib_core_cxx.pdb"
   "liblib_core_cxx.so"
