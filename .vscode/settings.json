@@ -4,6 +4,7 @@
         "load_data_utils.h": "c",
         "string.h": "c",
         "darknet.h": "c",
-        "global_avg.h": "c"
+        "global_avg.h": "c",
+        "dense.h": "c"
     }
 }

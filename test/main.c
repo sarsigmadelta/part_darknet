@@ -79,7 +79,8 @@ int main(){
 
     printf("net.ouput[-1] is %f\n", net.layers[net.n-1].output[net.layers[net.n-1].outputs-1]);
     printf("net.delta[-1] is %f\n", net.layers[0].delta[net.layers[0].outputs-1]);
-
+    printf("net.ouput[64] is %f\n", net.layers[net.n-1].output[64]);
+    printf("net.delta[64] is %f\n", net.layers[0].delta[63]);
     
     return 0;
 }

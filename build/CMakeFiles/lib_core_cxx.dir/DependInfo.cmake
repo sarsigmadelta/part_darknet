@@ -18,6 +18,11 @@ set(CMAKE_DEPENDS_CHECK_C
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_C
+  "lib_core_cxx_EXPORTS"
+  )
+
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../include"
@@ -27,6 +32,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mrzs/Proj/part_darknet/src/load_data.cpp" "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/load_data.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "lib_core_cxx_EXPORTS"
+  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

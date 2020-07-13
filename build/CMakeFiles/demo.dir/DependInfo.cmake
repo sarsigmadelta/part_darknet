@@ -12,7 +12,6 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../include"
   "/usr/local/cuda/include"
-  "/usr/local/include"
   "/usr/local/include/opencv"
   )
 
