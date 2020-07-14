@@ -70,6 +70,12 @@ int main(){
     net.input = get_random_data(608,608,3);
 
     int i;
+    for(i=0; i<net.n; ++i){
+        layer l = net.layers[i];
+        printf("out_h is %d\tout_w is %d\tout_c is %d\n",l.out_h,l.out_w,l.out_c);
+    }
+
+    
     for(i=0; i<3; ++i){
         forward_network(&net);
         gen_random_delta(&net);
