@@ -54,6 +54,7 @@ void backward_dense(layer l, network net){
         
         
         
+        
     }
 }
 
