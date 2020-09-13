@@ -3,7 +3,7 @@
 
 CMakeFiles/lib_core_cxx.dir/src/col2im.c.o
  ../include/col2im.h
- /home/mrzs/Proj/part_darknet/src/col2im.c
+ /part_darknet/src/col2im.c
 CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o
  ../include/col2im.h
  ../include/convolution_layer.h
@@ -13,10 +13,15 @@ CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o
  ../include/list.h
  ../include/load_data.h
  ../include/load_data_utils.h
- /home/mrzs/Proj/part_darknet/src/convolution_layer.c
+ /part_darknet/src/convolution_layer.c
+CMakeFiles/lib_core_cxx.dir/src/flatten.c.o
+ ../include/darknet.h
+ ../include/flatten.h
+ ../include/list.h
+ /part_darknet/src/flatten.c
 CMakeFiles/lib_core_cxx.dir/src/gemm.c.o
  ../include/gemm.h
- /home/mrzs/Proj/part_darknet/src/gemm.c
+ /part_darknet/src/gemm.c
 CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o
  ../include/col2im.h
  ../include/darknet.h
@@ -26,32 +31,33 @@ CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o
  ../include/list.h
  ../include/load_data.h
  ../include/load_data_utils.h
- /home/mrzs/Proj/part_darknet/src/global_avg.c
+ /part_darknet/src/global_avg.c
 CMakeFiles/lib_core_cxx.dir/src/im2col.c.o
  ../include/col2im.h
  ../include/im2col.h
  ../include/list.h
  ../include/load_data.h
  ../include/load_data_utils.h
- /home/mrzs/Proj/part_darknet/src/im2col.c
+ /part_darknet/src/im2col.c
 CMakeFiles/lib_core_cxx.dir/src/list.c.o
  ../include/list.h
- /home/mrzs/Proj/part_darknet/src/list.c
+ /part_darknet/src/list.c
 CMakeFiles/lib_core_cxx.dir/src/load_data_utils.c.o
  ../include/list.h
  ../include/load_data_utils.h
- /home/mrzs/Proj/part_darknet/src/load_data_utils.c
+ /part_darknet/src/load_data_utils.c
 CMakeFiles/lib_core_cxx.dir/src/network.c.o
  ../include/darknet.h
  ../include/list.h
  ../include/network.h
- /home/mrzs/Proj/part_darknet/src/network.c
+ /part_darknet/src/network.c
 CMakeFiles/lib_core_cxx.dir/src/parse_utils.c.o
- /home/mrzs/Proj/part_darknet/src/parse_utils.c
+ /part_darknet/src/parse_utils.c
 CMakeFiles/lib_core_cxx.dir/src/read_model.c.o
  ../include/col2im.h
  ../include/convolution_layer.h
  ../include/darknet.h
+ ../include/flatten.h
  ../include/gemm.h
  ../include/global_avg.h
  ../include/im2col.h
@@ -61,9 +67,9 @@ CMakeFiles/lib_core_cxx.dir/src/read_model.c.o
  ../include/network.h
  ../include/parse_utils.h
  ../include/read_model.h
- /home/mrzs/Proj/part_darknet/src/read_model.c
+ /part_darknet/src/read_model.c
 CMakeFiles/lib_core_cxx.dir/src/load_data.cpp.o
  ../include/list.h
  ../include/load_data.h
  ../include/load_data_utils.h
- /home/mrzs/Proj/part_darknet/src/load_data.cpp
+ /part_darknet/src/load_data.cpp

@@ -65,7 +65,7 @@ void gen_random_delta(network* net){
 }
 
 int main(){
-    char *cfg_path = "/home/mrzs/Proj/part_darknet/assets/yolov2_tiny.cfg";
+    char *cfg_path = "/part_darknet/assets/yolov2_tiny.cfg";
     network net = parse_network(cfg_path);
     net.input = get_random_data(608,608,3);
 
@@ -76,7 +76,7 @@ int main(){
     }
 
     
-    for(i=0; i<3; ++i){
+    for(i=0; i<5; ++i){
         forward_network(&net);
         gen_random_delta(&net);
         backward_network(&net);

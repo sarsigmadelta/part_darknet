@@ -7,11 +7,11 @@ C_FLAGS = -pthread -fPIC   -std=c++11 -g
 
 C_DEFINES = -Dlib_core_cxx_EXPORTS
 
-C_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/cuda/include 
+C_INCLUDES = -I/part_darknet/include -I/usr/local/cuda/include 
 
 CXX_FLAGS = -fPIC -fPIC   -std=c++11 -g
 
 CXX_DEFINES = -Dlib_core_cxx_EXPORTS
 
-CXX_INCLUDES = -I/home/mrzs/Proj/part_darknet/include -I/usr/local/cuda/include 
+CXX_INCLUDES = -I/part_darknet/include -I/usr/local/cuda/include 
 

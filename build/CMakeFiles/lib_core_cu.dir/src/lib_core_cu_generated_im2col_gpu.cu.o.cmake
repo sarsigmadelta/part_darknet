@@ -58,18 +58,18 @@ endif()
 
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/opt/conda/bin/cmake") # path
-set(source_file "/home/mrzs/Proj/part_darknet/src/im2col_gpu.cu") # path
-set(NVCC_generated_dependency_file "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o.depend") # path
+set(source_file "/part_darknet/src/im2col_gpu.cu") # path
+set(NVCC_generated_dependency_file "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o.depend") # path
 set(CUDA_make2cmake "/opt/conda/share/cmake-3.14/Modules/FindCUDA/make2cmake.cmake") # path
 set(CUDA_parse_cubin "/opt/conda/share/cmake-3.14/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "g++") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/.") # path
-set(generated_file_internal "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_im2col_gpu.cu.o") # path
-set(generated_cubin_file_internal "/home/mrzs/Proj/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_im2col_gpu.cu.o.cubin.txt") # path
+set(generated_file_path "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/.") # path
+set(generated_file_internal "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_im2col_gpu.cu.o") # path
+set(generated_cubin_file_internal "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_im2col_gpu.cu.o.cubin.txt") # path
 
 set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS -arch=sm_61;-O3;-G;-g;-std=c++11 ;; ) # list
@@ -79,7 +79,7 @@ set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64;-Dlib_core_cu_EXPORTS) # list
-set(CUDA_NVCC_INCLUDE_DIRS "/usr/local/cuda/include;/home/mrzs/Proj/part_darknet/include;/usr/local/cuda/include") # list (needs to be in quotes to handle spaces properly).
+set(CUDA_NVCC_INCLUDE_DIRS "/usr/local/cuda/include;/part_darknet/include;/usr/local/cuda/include") # list (needs to be in quotes to handle spaces properly).
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-c") # string
 set(cuda_language_flag ) # list

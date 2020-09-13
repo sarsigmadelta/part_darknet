@@ -5,6 +5,7 @@
         "string.h": "c",
         "darknet.h": "c",
         "global_avg.h": "c",
-        "dense.h": "c"
+        "dense.h": "c",
+        "parse_utils.h": "c"
     }
 }

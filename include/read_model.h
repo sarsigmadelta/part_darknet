@@ -7,6 +7,7 @@
 #include "darknet.h"
 #include "convolution_layer.h"
 #include "global_avg.h"
+#include "flatten.h"
 
 char *read_line(FILE* fp);
 
@@ -18,5 +19,6 @@ network parse_network(char *filename);
 
 convolution_layer parse_convolution_layer(size_param param, list *l);
 
+flatten_layer parse_flatten_layer(size_param param, list *option);
 
 #endif

@@ -22,6 +22,10 @@ list.h
 stdio.h
 -
 
+../include/flatten.h
+darknet.h
+../include/darknet.h
+
 ../include/gemm.h
 stdio.h
 -
@@ -101,28 +105,30 @@ convolution_layer.h
 ../include/convolution_layer.h
 global_avg.h
 ../include/global_avg.h
+flatten.h
+../include/flatten.h
 
-/home/mrzs/Proj/part_darknet/test/main.c
+/part_darknet/test/main.c
 list.h
-/home/mrzs/Proj/part_darknet/test/list.h
+/part_darknet/test/list.h
 read_model.h
-/home/mrzs/Proj/part_darknet/test/read_model.h
+/part_darknet/test/read_model.h
 stdio.h
 -
 pthread.h
 -
 load_data.h
-/home/mrzs/Proj/part_darknet/test/load_data.h
+/part_darknet/test/load_data.h
 im2col.h
-/home/mrzs/Proj/part_darknet/test/im2col.h
+/part_darknet/test/im2col.h
 matrix_mul.h
-/home/mrzs/Proj/part_darknet/test/matrix_mul.h
+/part_darknet/test/matrix_mul.h
 parse_utils.h
-/home/mrzs/Proj/part_darknet/test/parse_utils.h
+/part_darknet/test/parse_utils.h
 gemm.h
-/home/mrzs/Proj/part_darknet/test/gemm.h
+/part_darknet/test/gemm.h
 matrix_mul_shared.h
-/home/mrzs/Proj/part_darknet/test/matrix_mul_shared.h
+/part_darknet/test/matrix_mul_shared.h
 network.h
-/home/mrzs/Proj/part_darknet/test/network.h
+/part_darknet/test/network.h
 

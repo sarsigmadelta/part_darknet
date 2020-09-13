@@ -22,6 +22,10 @@ list.h
 stdio.h
 -
 
+../include/flatten.h
+darknet.h
+../include/darknet.h
+
 ../include/gemm.h
 stdio.h
 -
@@ -91,52 +95,58 @@ convolution_layer.h
 ../include/convolution_layer.h
 global_avg.h
 ../include/global_avg.h
+flatten.h
+../include/flatten.h
 
-/home/mrzs/Proj/part_darknet/src/col2im.c
+/part_darknet/src/col2im.c
 col2im.h
-/home/mrzs/Proj/part_darknet/src/col2im.h
+/part_darknet/src/col2im.h
 
-/home/mrzs/Proj/part_darknet/src/convolution_layer.c
+/part_darknet/src/convolution_layer.c
 convolution_layer.h
-/home/mrzs/Proj/part_darknet/src/convolution_layer.h
+/part_darknet/src/convolution_layer.h
 
-/home/mrzs/Proj/part_darknet/src/gemm.c
+/part_darknet/src/flatten.c
+flatten.h
+/part_darknet/src/flatten.h
+
+/part_darknet/src/gemm.c
 gemm.h
-/home/mrzs/Proj/part_darknet/src/gemm.h
+/part_darknet/src/gemm.h
 
-/home/mrzs/Proj/part_darknet/src/global_avg.c
+/part_darknet/src/global_avg.c
 global_avg.h
-/home/mrzs/Proj/part_darknet/src/global_avg.h
+/part_darknet/src/global_avg.h
 
-/home/mrzs/Proj/part_darknet/src/im2col.c
+/part_darknet/src/im2col.c
 im2col.h
-/home/mrzs/Proj/part_darknet/src/im2col.h
+/part_darknet/src/im2col.h
 list.h
-/home/mrzs/Proj/part_darknet/src/list.h
+/part_darknet/src/list.h
 
-/home/mrzs/Proj/part_darknet/src/list.c
+/part_darknet/src/list.c
 list.h
-/home/mrzs/Proj/part_darknet/src/list.h
+/part_darknet/src/list.h
 stdio.h
 -
 
-/home/mrzs/Proj/part_darknet/src/load_data_utils.c
+/part_darknet/src/load_data_utils.c
 load_data_utils.h
-/home/mrzs/Proj/part_darknet/src/load_data_utils.h
+/part_darknet/src/load_data_utils.h
 
-/home/mrzs/Proj/part_darknet/src/network.c
+/part_darknet/src/network.c
 network.h
-/home/mrzs/Proj/part_darknet/src/network.h
+/part_darknet/src/network.h
 
-/home/mrzs/Proj/part_darknet/src/parse_utils.c
+/part_darknet/src/parse_utils.c
 
-/home/mrzs/Proj/part_darknet/src/read_model.c
+/part_darknet/src/read_model.c
 read_model.h
-/home/mrzs/Proj/part_darknet/src/read_model.h
+/part_darknet/src/read_model.h
 network.h
-/home/mrzs/Proj/part_darknet/src/network.h
+/part_darknet/src/network.h
 string.h
-/home/mrzs/Proj/part_darknet/src/string.h
+/part_darknet/src/string.h
 parse_utils.h
-/home/mrzs/Proj/part_darknet/src/parse_utils.h
+/part_darknet/src/parse_utils.h
 

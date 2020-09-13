@@ -1,4 +1,4 @@
-# Install script for directory: /home/mrzs/Proj/part_darknet
+# Install script for directory: /part_darknet
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mrzs/Proj/part_darknet/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/part_darknet/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -30,6 +30,17 @@ global_avg_layer parse_global_avg_layer(size_param param, list *option){
     return l;
 }
 
+flatten_layer parse_flatten_layer(size_param param, list *option){
+    flatten_layer l = {0};
+    int batch = param.batch;
+    int width = param.w;
+    int height = param.h;
+    int channels = param.c;
+
+    l = make_flatten(batch, width, height, channels);
+    return l;
+}
+
 char *read_line(FILE* fp){
     int len = 128;
     char *line = (char*)calloc(len, sizeof(char));
@@ -134,6 +145,9 @@ network parse_network(char *filename){
         }else if(!strcmp(type, "[global_avg]")){
             list *option = sec->option;
             l = parse_global_avg_layer(params, option);
+        }else if(!strcmp(type, "[flatten]")){
+            list *option = sec->option;
+            l = parse_flatten_layer(params, option);
         }
         n = n->next;
         if(n){

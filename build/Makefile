@@ -48,10 +48,10 @@ RM = /opt/conda/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mrzs/Proj/part_darknet
+CMAKE_SOURCE_DIR = /part_darknet
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mrzs/Proj/part_darknet/build
+CMAKE_BINARY_DIR = /part_darknet/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles /home/mrzs/Proj/part_darknet/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /part_darknet/build/CMakeFiles /part_darknet/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrzs/Proj/part_darknet/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /part_darknet/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -202,6 +202,33 @@ src/convolution_layer.s: src/convolution_layer.c.s
 src/convolution_layer.c.s:
 	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.s
 .PHONY : src/convolution_layer.c.s
+
+src/flatten.o: src/flatten.c.o
+
+.PHONY : src/flatten.o
+
+# target to build an object file
+src/flatten.c.o:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/flatten.c.o
+.PHONY : src/flatten.c.o
+
+src/flatten.i: src/flatten.c.i
+
+.PHONY : src/flatten.i
+
+# target to preprocess a source file
+src/flatten.c.i:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/flatten.c.i
+.PHONY : src/flatten.c.i
+
+src/flatten.s: src/flatten.c.s
+
+.PHONY : src/flatten.s
+
+# target to generate assembly for a file
+src/flatten.c.s:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/flatten.c.s
+.PHONY : src/flatten.c.s
 
 src/gemm.o: src/gemm.c.o
 
@@ -490,6 +517,9 @@ help:
 	@echo "... src/convolution_layer.o"
 	@echo "... src/convolution_layer.i"
 	@echo "... src/convolution_layer.s"
+	@echo "... src/flatten.o"
+	@echo "... src/flatten.i"
+	@echo "... src/flatten.s"
 	@echo "... src/gemm.o"
 	@echo "... src/gemm.i"
 	@echo "... src/gemm.s"
