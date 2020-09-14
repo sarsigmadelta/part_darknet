@@ -14,6 +14,16 @@ CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o
  ../include/load_data.h
  ../include/load_data_utils.h
  /part_darknet/src/convolution_layer.c
+CMakeFiles/lib_core_cxx.dir/src/dense.c.o
+ ../include/col2im.h
+ ../include/darknet.h
+ ../include/dense.h
+ ../include/gemm.h
+ ../include/im2col.h
+ ../include/list.h
+ ../include/load_data.h
+ ../include/load_data_utils.h
+ /part_darknet/src/dense.c
 CMakeFiles/lib_core_cxx.dir/src/flatten.c.o
  ../include/darknet.h
  ../include/flatten.h
@@ -57,6 +67,7 @@ CMakeFiles/lib_core_cxx.dir/src/read_model.c.o
  ../include/col2im.h
  ../include/convolution_layer.h
  ../include/darknet.h
+ ../include/dense.h
  ../include/flatten.h
  ../include/gemm.h
  ../include/global_avg.h

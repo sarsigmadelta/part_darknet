@@ -174,9 +174,22 @@ CMakeFiles/lib_core_cxx.dir/src/gemm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib_core_cxx.dir/src/gemm.c.s"
 	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /part_darknet/src/gemm.c -o CMakeFiles/lib_core_cxx.dir/src/gemm.c.s
 
+CMakeFiles/lib_core_cxx.dir/src/dense.c.o: CMakeFiles/lib_core_cxx.dir/flags.make
+CMakeFiles/lib_core_cxx.dir/src/dense.c.o: ../src/dense.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/lib_core_cxx.dir/src/dense.c.o"
+	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lib_core_cxx.dir/src/dense.c.o   -c /part_darknet/src/dense.c
+
+CMakeFiles/lib_core_cxx.dir/src/dense.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib_core_cxx.dir/src/dense.c.i"
+	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /part_darknet/src/dense.c > CMakeFiles/lib_core_cxx.dir/src/dense.c.i
+
+CMakeFiles/lib_core_cxx.dir/src/dense.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib_core_cxx.dir/src/dense.c.s"
+	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /part_darknet/src/dense.c -o CMakeFiles/lib_core_cxx.dir/src/dense.c.s
+
 CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o: CMakeFiles/lib_core_cxx.dir/flags.make
 CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o: ../src/global_avg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o"
 	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o   -c /part_darknet/src/global_avg.c
 
 CMakeFiles/lib_core_cxx.dir/src/global_avg.c.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/lib_core_cxx.dir/src/global_avg.c.s: cmake_force
 
 CMakeFiles/lib_core_cxx.dir/src/flatten.c.o: CMakeFiles/lib_core_cxx.dir/flags.make
 CMakeFiles/lib_core_cxx.dir/src/flatten.c.o: ../src/flatten.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lib_core_cxx.dir/src/flatten.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/lib_core_cxx.dir/src/flatten.c.o"
 	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lib_core_cxx.dir/src/flatten.c.o   -c /part_darknet/src/flatten.c
 
 CMakeFiles/lib_core_cxx.dir/src/flatten.c.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/lib_core_cxx.dir/src/flatten.c.s: cmake_force
 
 CMakeFiles/lib_core_cxx.dir/src/col2im.c.o: CMakeFiles/lib_core_cxx.dir/flags.make
 CMakeFiles/lib_core_cxx.dir/src/col2im.c.o: ../src/col2im.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/lib_core_cxx.dir/src/col2im.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/lib_core_cxx.dir/src/col2im.c.o"
 	g++ $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lib_core_cxx.dir/src/col2im.c.o   -c /part_darknet/src/col2im.c
 
 CMakeFiles/lib_core_cxx.dir/src/col2im.c.i: cmake_force
@@ -224,6 +237,7 @@ lib_core_cxx_OBJECTS = \
 "CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o" \
 "CMakeFiles/lib_core_cxx.dir/src/network.c.o" \
 "CMakeFiles/lib_core_cxx.dir/src/gemm.c.o" \
+"CMakeFiles/lib_core_cxx.dir/src/dense.c.o" \
 "CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o" \
 "CMakeFiles/lib_core_cxx.dir/src/flatten.c.o" \
 "CMakeFiles/lib_core_cxx.dir/src/col2im.c.o"
@@ -240,12 +254,13 @@ liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/parse_utils.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/network.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/gemm.c.o
+liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/dense.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/flatten.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/src/col2im.c.o
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/build.make
 liblib_core_cxx.so: CMakeFiles/lib_core_cxx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library liblib_core_cxx.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library liblib_core_cxx.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib_core_cxx.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

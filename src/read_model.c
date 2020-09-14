@@ -41,6 +41,18 @@ flatten_layer parse_flatten_layer(size_param param, list *option){
     return l;
 }
 
+dense_layer parse_dense_layer(size_param param, list *option){
+    dense_layer l = {0};
+    int batch = param.batch;
+    int width = param.w;
+    int height = param.h;
+    int channels = param.c;
+    int filters = option_find_int(option, "filters");
+
+    l = make_dense(batch, width, height, channels, filters);
+    return l;
+}
+
 char *read_line(FILE* fp){
     int len = 128;
     char *line = (char*)calloc(len, sizeof(char));
@@ -148,6 +160,9 @@ network parse_network(char *filename){
         }else if(!strcmp(type, "[flatten]")){
             list *option = sec->option;
             l = parse_flatten_layer(params, option);
+        }else if(!strcmp(type, "[dense]")){
+            list *option = sec->option;
+            l = parse_dense_layer(params, option);
         }
         n = n->next;
         if(n){

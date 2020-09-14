@@ -76,17 +76,17 @@ int main(){
     }
 
     
-    for(i=0; i<5; ++i){
+    for(i=0; i<2; ++i){
         forward_network(&net);
         gen_random_delta(&net);
         backward_network(&net);
         update_network(&net);
     }
-
+    printf("cal done\n");
     printf("net.ouput[-1] is %f\n", net.layers[net.n-1].output[net.layers[net.n-1].outputs-1]);
-    printf("net.delta[-1] is %f\n", net.layers[0].delta[net.layers[0].outputs-1]);
-    printf("net.ouput[64] is %f\n", net.layers[net.n-1].output[64]);
-    printf("net.delta[64] is %f\n", net.layers[0].delta[63]);
+    //printf("net.delta[-1] is %f\n", net.layers[0].delta[net.layers[0].outputs-1]);
+    //printf("net.ouput[64] is %f\n", net.layers[net.n-1].output[64]);
+    //printf("net.delta[64] is %f\n", net.layers[0].delta[63]);
     
     return 0;
 }

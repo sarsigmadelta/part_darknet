@@ -7,7 +7,7 @@
 
 typedef layer dense_layer;
 
-dense_layer make_dense(int batch, int w, int h, int c);
+dense_layer make_dense(int batch, int w, int h, int c, int out);
 
 void forward_dense(layer l, network net);
 void backward_dense(layer l, network net);

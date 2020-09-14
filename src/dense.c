@@ -19,43 +19,57 @@ dense_layer make_dense(int batch, int w, int h, int c, int out){
     l.delta = (float*)calloc(l.batch * l.outputs, sizeof(float));
 
     l.weight_updates = (float*)calloc(l.nweights, sizeof(float));
+    l.bias_updates = (float*)calloc(1, sizeof(float));
 
     l.forward_cpu = forward_dense;
+    l.backward_cpu = backward_dense;
+    l.update_cpu = update_dense;
     
     return l;
 }
 
 void forward_dense(layer l, network net){
-    int i;
-    int m = 1;
+    int m = l.batch;
     int k = l.inputs;
     int n = l.out_c;
 
-    for(i=0; i<l.batch; ++i){
-        float *a = net.input + i * l.inputs;
-        float *b = l.weight;
-        float *c = l.output + i * l.outputs;
+    float *a = net.input;
+    float *b = l.weight;
+    float *c = l.output;
 
-        gemm_nn(m, n, k, 1., a, k, b, n, c, n);
-
-    }
+    gemm_nt(m, n, k, 1., a, k, b, k, c, n);
 }
 
 void backward_dense(layer l, network net){
     int i;
 
-    for(i=0; i<l.batch; ++i){
-        float *a = l.weight;
-        float *b = l.delta;
-        float *c = net.workspace;
+    int m = l.out_c;
+    int k = l.batch;
+    int n = l.inputs;
 
-        float *im = net.input;
-        float *imd = net.delta;
-        
-        
-        
-        
+    float *a = l.delta;
+    float *b = net.input;
+    float *c = l.weight_updates;
+            
+    gemm_tn(m, n, k, 1., a, m, b, n, c, n);
+
+    a = l.delta;
+    b = l.weight;
+    c = net.delta;
+
+    m = l.batch;
+    k = l.out_c;
+    n = l.inputs;
+
+    if(c){
+        gemm_nt(m, k, n, 1, a, k, b, k, c, n);
     }
+}
+
+void update_dense(layer l, update_param a){
+    float learning_rate = a.learning_rate;
+    axy_cpu(l.nweights, learning_rate, l.weight_updates, 1, l.weight, 1);
+    //axy_cpu(l.out_c, learning_rate, l.bias_updates, 1, l.bias, 1);
 }
 
 

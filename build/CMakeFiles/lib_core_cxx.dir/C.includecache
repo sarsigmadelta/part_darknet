@@ -22,6 +22,14 @@ list.h
 stdio.h
 -
 
+../include/dense.h
+darknet.h
+../include/darknet.h
+im2col.h
+../include/im2col.h
+gemm.h
+../include/gemm.h
+
 ../include/flatten.h
 darknet.h
 ../include/darknet.h
@@ -97,6 +105,8 @@ global_avg.h
 ../include/global_avg.h
 flatten.h
 ../include/flatten.h
+dense.h
+../include/dense.h
 
 /part_darknet/src/col2im.c
 col2im.h
@@ -105,6 +115,10 @@ col2im.h
 /part_darknet/src/convolution_layer.c
 convolution_layer.h
 /part_darknet/src/convolution_layer.h
+
+/part_darknet/src/dense.c
+dense.h
+/part_darknet/src/dense.h
 
 /part_darknet/src/flatten.c
 flatten.h

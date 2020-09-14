@@ -4,6 +4,7 @@
 CMakeFiles/demo.dir/test/main.c.o: ../include/col2im.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/convolution_layer.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/darknet.h
+CMakeFiles/demo.dir/test/main.c.o: ../include/dense.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/flatten.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/gemm.h
 CMakeFiles/demo.dir/test/main.c.o: ../include/global_avg.h

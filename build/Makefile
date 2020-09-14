@@ -203,6 +203,33 @@ src/convolution_layer.c.s:
 	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.s
 .PHONY : src/convolution_layer.c.s
 
+src/dense.o: src/dense.c.o
+
+.PHONY : src/dense.o
+
+# target to build an object file
+src/dense.c.o:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/dense.c.o
+.PHONY : src/dense.c.o
+
+src/dense.i: src/dense.c.i
+
+.PHONY : src/dense.i
+
+# target to preprocess a source file
+src/dense.c.i:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/dense.c.i
+.PHONY : src/dense.c.i
+
+src/dense.s: src/dense.c.s
+
+.PHONY : src/dense.s
+
+# target to generate assembly for a file
+src/dense.c.s:
+	$(MAKE) -f CMakeFiles/lib_core_cxx.dir/build.make CMakeFiles/lib_core_cxx.dir/src/dense.c.s
+.PHONY : src/dense.c.s
+
 src/flatten.o: src/flatten.c.o
 
 .PHONY : src/flatten.o
@@ -517,6 +544,9 @@ help:
 	@echo "... src/convolution_layer.o"
 	@echo "... src/convolution_layer.i"
 	@echo "... src/convolution_layer.s"
+	@echo "... src/dense.o"
+	@echo "... src/dense.i"
+	@echo "... src/dense.s"
 	@echo "... src/flatten.o"
 	@echo "... src/flatten.i"
 	@echo "... src/flatten.s"

@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/part_darknet/src/col2im.c" "/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/col2im.c.o"
   "/part_darknet/src/convolution_layer.c" "/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/convolution_layer.c.o"
+  "/part_darknet/src/dense.c" "/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/dense.c.o"
   "/part_darknet/src/flatten.c" "/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/flatten.c.o"
   "/part_darknet/src/gemm.c" "/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/gemm.c.o"
   "/part_darknet/src/global_avg.c" "/part_darknet/build/CMakeFiles/lib_core_cxx.dir/src/global_avg.c.o"

@@ -22,6 +22,14 @@ list.h
 stdio.h
 -
 
+../include/dense.h
+darknet.h
+../include/darknet.h
+im2col.h
+../include/im2col.h
+gemm.h
+../include/gemm.h
+
 ../include/flatten.h
 darknet.h
 ../include/darknet.h
@@ -107,6 +115,8 @@ global_avg.h
 ../include/global_avg.h
 flatten.h
 ../include/flatten.h
+dense.h
+../include/dense.h
 
 /part_darknet/test/main.c
 list.h
