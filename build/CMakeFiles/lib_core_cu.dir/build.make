@@ -78,10 +78,17 @@ CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_gemm.cu.o: ../src/gemm.cu
 	cd /part_darknet/build/CMakeFiles/lib_core_cu.dir/src && /opt/conda/bin/cmake -E make_directory /part_darknet/build/CMakeFiles/lib_core_cu.dir/src/.
 	cd /part_darknet/build/CMakeFiles/lib_core_cu.dir/src && /opt/conda/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_gemm.cu.o -D generated_cubin_file:STRING=/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_gemm.cu.o.cubin.txt -P /part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_gemm.cu.o.cmake
 
+CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o.depend
+CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o.cmake
+CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o: ../src/col2im_gpu.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building NVCC (Device) object CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o"
+	cd /part_darknet/build/CMakeFiles/lib_core_cu.dir/src && /opt/conda/bin/cmake -E make_directory /part_darknet/build/CMakeFiles/lib_core_cu.dir/src/.
+	cd /part_darknet/build/CMakeFiles/lib_core_cu.dir/src && /opt/conda/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_col2im_gpu.cu.o -D generated_cubin_file:STRING=/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_col2im_gpu.cu.o.cubin.txt -P /part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o.cmake
+
 CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o.depend
 CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o.cmake
 CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o: ../src/matrix_mul_shared.cu
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building NVCC (Device) object CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building NVCC (Device) object CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o"
 	cd /part_darknet/build/CMakeFiles/lib_core_cu.dir/src && /opt/conda/bin/cmake -E make_directory /part_darknet/build/CMakeFiles/lib_core_cu.dir/src/.
 	cd /part_darknet/build/CMakeFiles/lib_core_cu.dir/src && /opt/conda/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_matrix_mul_shared.cu.o -D generated_cubin_file:STRING=/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/./lib_core_cu_generated_matrix_mul_shared.cu.o.cubin.txt -P /part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o.cmake
 
@@ -93,17 +100,19 @@ lib_core_cu_EXTERNAL_OBJECTS = \
 "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o" \
 "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o" \
 "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_gemm.cu.o" \
+"/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o" \
 "/part_darknet/build/CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o"
 
 liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o
 liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o
 liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_gemm.cu.o
+liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o
 liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o
 liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/build.make
 liblib_core_cu.so: /usr/local/cuda/lib64/libcudart_static.a
 liblib_core_cu.so: /usr/lib/x86_64-linux-gnu/librt.so
 liblib_core_cu.so: CMakeFiles/lib_core_cu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library liblib_core_cu.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/part_darknet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library liblib_core_cu.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib_core_cu.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -118,6 +127,7 @@ CMakeFiles/lib_core_cu.dir/clean:
 CMakeFiles/lib_core_cu.dir/depend: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul.cu.o
 CMakeFiles/lib_core_cu.dir/depend: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_im2col_gpu.cu.o
 CMakeFiles/lib_core_cu.dir/depend: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_gemm.cu.o
+CMakeFiles/lib_core_cu.dir/depend: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_col2im_gpu.cu.o
 CMakeFiles/lib_core_cu.dir/depend: CMakeFiles/lib_core_cu.dir/src/lib_core_cu_generated_matrix_mul_shared.cu.o
 	cd /part_darknet/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /part_darknet /part_darknet /part_darknet/build /part_darknet/build /part_darknet/build/CMakeFiles/lib_core_cu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lib_core_cu.dir/depend
